@@ -1,4 +1,4 @@
-# Raymond
+# alfr3d
 
 Chef repo to provision and configure workstations
 
@@ -27,4 +27,15 @@ berks vendor && chef-client -z -o 'role[workstation]' -E macbook
 Installing chef-client:
 ```
 curl -L https://omnitruck.chef.io/install.sh | sudo bash
+```
+
+# Git config
+
+To use custom cred for commits to this repo set the following in `.git/config`
+```
+[credential]
+    helper=
+[user]
+	name = your name
+	email = your@email.com
 ```
