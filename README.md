@@ -11,12 +11,12 @@ berks vendor
 
 Run chef to apply converge
 ```
-chef-client -z -o 'role[workstation]' -E macbook
+sudo chef-client -z -o 'role[workstation]' -E macbook
 ```
 
 Or if you are lazy
 ```
-berks vendor && chef-client -z -o 'role[workstation]' -E macbook
+berks vendor && sudo chef-client -z -o 'role[workstation]' -E macbook
 ```
 
 # Pre-requisites
