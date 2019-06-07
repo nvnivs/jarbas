@@ -22,7 +22,7 @@ berks vendor && sudo chef-client -z -o 'role[workstation]' -E macbook
 # Pre-requisites
 
 * Git: You need to check stuff out somewhow
-* chef-client: You need to run chef
+* ChefDK: You need chef, you need berkshelf
 
 Installing chef-client:
 ```
