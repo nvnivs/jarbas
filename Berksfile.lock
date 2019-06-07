@@ -1,0 +1,8 @@
+DEPENDENCIES
+  workstation
+    path: cookbooks/workstation
+
+GRAPH
+  homebrew (5.0.8)
+  workstation (1.7.0)
+    homebrew (>= 0.0.0)
