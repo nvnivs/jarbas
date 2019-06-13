@@ -10,6 +10,7 @@ packages = [
   'ansible',         # Automate deployment, configuration, and upgrading
   'autossh',         # Automatically restart SSH sessions and tunnels
   'coreutils',       # GNU File, Shell, and Text utilities
+  'git',             # Distributed revision control system
   'golang',          # Open source programming language to build simple/reliable/efficient software
   'jq',              # Lightweight and flexible command-line JSON processor
   'lynx',            # Text-based web browser
@@ -44,7 +45,7 @@ homebrew_package 'tcptraceroute'
 homebrew_package 'wget'
 
 # Terraform should have a fixed version, MAKE IT HAPPEN
-homebrew_package 'terraform' do
-  action :upgrade
-  version '0.11.1' # Version is being blatantly ignored :(
-end
+#homebrew_package 'terraform' do
+#  action :upgrade
+#  version '0.11.11' # Version is being blatantly ignored :(
+#end

@@ -24,7 +24,7 @@ casks = [
   # microsoft-remote-desktop-beta
   'minikube',                      # Minikube is a tool that makes it easy to run Kubernetes locally.
   'mysql-shell',
-  'p4v',                           # Perforce
+  # 'p4v',                           # Perforce SHASUM failures
   # slack
   # spotify
   # tunnelblick                   # VPN client
@@ -37,7 +37,7 @@ casks.each do |c|
   homebrew_cask c
 end
 
-execute 'homebrew_upgrade_all_casks'
+execute 'homebrew_upgrade_all_casks' do
   command 'brew cask upgrade'
   user Homebrew.owner
   environment ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner })
