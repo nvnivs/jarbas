@@ -8,6 +8,10 @@ homebrew_tap 'caskroom/cask'
 homebrew_tap 'caskroom/versions'
 homebrew_tap 'chef/chef'
 
+homebrew_tap 'homebrew/cask-versions' do
+  action :untap
+end
+
 # Available casks at https://github.com/Homebrew/homebrew-cask/tree/master/Casks
 casks = [
   'android-file-transfer',         # Android File Transfer
