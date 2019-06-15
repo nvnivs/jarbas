@@ -45,7 +45,7 @@ homebrew_package 'tcptraceroute'
 homebrew_package 'wget'
 
 # Terraform should have a fixed version, MAKE IT HAPPEN
-#homebrew_package 'terraform' do
+# homebrew_package 'terraform' do
 #  action :upgrade
 #  version '0.11.11' # Version is being blatantly ignored :(
-#end
+# end

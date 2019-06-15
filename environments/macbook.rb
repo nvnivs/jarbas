@@ -1,2 +1,2 @@
-name "macbook"
-description "Environment for macbook"
+name 'macbook'
+description 'Environment for macbook'

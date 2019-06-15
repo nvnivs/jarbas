@@ -22,11 +22,11 @@ casks = [
   # evernote
   # firefox                       # Firefox (TODO: would rather have dev edition but can find it on brew)
   'google-chrome',
-  'gpg-suite',                     # encrypt, decrypt, sign and verify files or messages
+  'gpg-suite', # encrypt, decrypt, sign and verify files or messages
   # iterm2                        # Terminal
-  'java8',                         # Java Standard Edition Development Kit
+  'java8', # Java Standard Edition Development Kit
   # microsoft-remote-desktop-beta
-  'minikube',                      # Minikube is a tool that makes it easy to run Kubernetes locally.
+  'minikube', # Minikube is a tool that makes it easy to run Kubernetes locally.
   'mysql-shell',
   # 'p4v',                           # Perforce SHASUM failures
   # slack
@@ -34,7 +34,7 @@ casks = [
   # tunnelblick                   # VPN client
   'vagrant',
   'virtualbox',
-  'visual-studio-code',
+  'visual-studio-code'
 ]
 
 casks.each do |c|
@@ -47,4 +47,3 @@ execute 'homebrew_upgrade_all_casks' do
   environment ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner })
   cwd ::Dir.home(Homebrew.owner)
 end
-
