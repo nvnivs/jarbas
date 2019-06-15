@@ -1,5 +1,5 @@
 #
-# Cookbook:: workstation
+# Cookbook:: jrb_workstation
 # Recipe:: brew
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.

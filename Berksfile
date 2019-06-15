@@ -1,3 +1,3 @@
 source 'https://supermarket.chef.io'
 
-cookbook 'workstation', path: './cookbooks/workstation'
+cookbook 'jrb_workstation', path: './cookbooks/jrb_workstation'

@@ -1,8 +1,8 @@
 DEPENDENCIES
-  workstation
-    path: cookbooks/workstation
+  jrb_workstation
+    path: cookbooks/jrb_workstation
 
 GRAPH
   homebrew (5.0.8)
-  workstation (1.20.0)
+  jrb_workstation (2.0.0)
     homebrew (>= 0.0.0)
