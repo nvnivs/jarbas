@@ -3,7 +3,8 @@ description 'Provisions and configures a workstation'
 
 base_run_list = [
   'recipe[jrb_workstation]',
-  'recipe[jrb_workstation::ruby]'
+  'recipe[jrb_workstation::ruby]',
+  'recipe[jrb_workstation::vim]'
 ]
 
 run_list(base_run_list)

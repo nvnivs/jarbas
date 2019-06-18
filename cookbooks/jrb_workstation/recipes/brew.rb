@@ -25,7 +25,6 @@ packages = [
   'ranger',          # File browser
   'telnet',          # User interface to the TELNET protocol (built from macOS Sierra sources)
   'tree',            # Display directories as trees (with optional color/HTML output)
-  'vim',             # Vi 'workalike' with many additional features
   'watch',           # Executes a program periodically, showing output fullscreen
 ]
 
