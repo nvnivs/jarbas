@@ -14,7 +14,7 @@ Run chef to apply converge
 
 Or if you are lazy
 
-    berks vendor && sudo chef-client -z -o 'role[workstation]' -E macbook
+    berks vendor && sudo chef-client -z -o 'role[workstation]' -E macbook -j .chef/node.json
 
 # Pre-requisites
 
