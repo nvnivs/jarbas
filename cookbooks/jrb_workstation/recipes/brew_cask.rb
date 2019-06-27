@@ -32,7 +32,6 @@ casks = [
   # slack
   # spotify
   # tunnelblick                   # VPN client
-  'vagrant',
   'virtualbox',
   'visual-studio-code'
 ]

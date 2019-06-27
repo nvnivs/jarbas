@@ -6,3 +6,4 @@
 
 include_recipe 'jrb_workstation::vim'
 include_recipe 'jrb_workstation::ruby'
+include_recipe 'jrb_workstation::vagrant'
