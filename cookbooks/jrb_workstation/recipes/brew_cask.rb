@@ -41,9 +41,12 @@ casks.each do |c|
 end
 
 # Use `brew cask outdated` to look for casks pending upgrade so output can be produced regarding which casks are being updated
-execute 'homebrew_upgrade_all_casks' do
-  command 'brew cask upgrade'
-  user Homebrew.owner
-  environment ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner })
-  cwd ::Dir.home(Homebrew.owner)
-end
+#
+# DISABLE: as it's upgrading vagrant
+#
+#execute 'homebrew_upgrade_all_casks' do
+#  command 'brew cask upgrade'
+#  user Homebrew.owner
+#  environment ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner })
+#  cwd ::Dir.home(Homebrew.owner)
+#end
