@@ -40,13 +40,28 @@ casks.each do |c|
   homebrew_cask c
 end
 
-# Use `brew cask outdated` to look for casks pending upgrade so output can be produced regarding which casks are being updated
-#
-# DISABLE: as it's upgrading vagrant
-#
-#execute 'homebrew_upgrade_all_casks' do
-#  command 'brew cask upgrade'
-#  user Homebrew.owner
-#  environment ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner })
-#  cwd ::Dir.home(Homebrew.owner)
-#end
+# Get all outdated casks
+outdated = Mixlib::ShellOut.new("brew cask outdated",
+                                :user => Homebrew.owner,
+                                :environment => ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner }),
+                                :cwd => ::Dir.home(Homebrew.owner))
+outdated.run_command
+
+# Fail if outdated casks errored
+if outdated.error? then
+  Chef::Log.fatal(outdated.stderr)
+  raise 'Fail to get outdated casks'
+end
+
+Chef::Log.warn(casks.include? 'vagrant')
+# Update outdated casks
+outdated.stdout.each_line do |cask|
+  cask = cask.gsub('\n', '').strip
+  execute "brew_cask_upgrade[#{cask}]" do
+    command "brew cask upgrade #{cask}"
+    user Homebrew.owner
+    environment ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner })
+    cwd ::Dir.home(Homebrew.owner)
+    only_if { casks.include? cask }
+  end
+end
