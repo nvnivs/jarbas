@@ -22,5 +22,5 @@ def outdated_casks
     raise 'Fail to get outdated casks'
    end
 
-  outdated.stdout
+  outdated.stdout.each_line.map{ |c| c.gsub('\n', '').strip }
 end

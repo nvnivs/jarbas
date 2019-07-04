@@ -21,13 +21,14 @@ casks.each do |c|
 end
 
 # Update outdated casks
-outdated_casks.each_line do |cask|
-  cask = cask.gsub('\n', '').strip
+outdated_casks do |cask|
   execute "brew_cask_upgrade[#{cask}]" do
     command "brew cask upgrade #{cask}"
     only_if { casks.include? cask }
-    user Homebrew.owner
-    environment ({ 'HOME' => ::Dir.home(Homebrew.owner), 'USER' => Homebrew.owner })
-    cwd ::Dir.home(Homebrew.owner)
+    user node['jrb_workstation']['user']
+    environment ({
+      'HOME' => node['jrb_workstation']['home'],
+      'USER' => node['jrb_workstation']['user'] })
+    cwd node['jrb_workstation']['home']
   end
 end
