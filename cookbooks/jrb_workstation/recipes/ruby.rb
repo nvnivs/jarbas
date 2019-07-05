@@ -23,13 +23,7 @@ execute 'install_rvm' do
   cwd node['jrb_workstation']['home']
 end
 
-rubies = [
-  'ruby-1.9.3-p551',
-  'ruby-2.2.5',
-  'ruby-2.5.5'
-]
-
-rubies.each do |version|
+node['jrb_workstation']['ruby']['rubies'].each do |version|
   execute "install_ruby[#{version}]" do
     command "rvm install #{version}"
     not_if "rvm list | grep -E #{version}"
@@ -42,8 +36,8 @@ rubies.each do |version|
 end
 
 execute 'set_default_ruby' do
-  command 'rvm use 2.5.5 --default'
-  not_if 'rvm list | grep -E "\* ruby-2.5.5"'
+  command "rvm use #{node['jrb_workstation']['ruby']['default_version']} --default"
+  not_if"rvm list | grep -F '* ruby-#{node['jrb_workstation']['ruby']['default_version']}'"
   user node['jrb_workstation']['user']
   environment ({
     'HOME' => node['jrb_workstation']['home'],
@@ -51,11 +45,7 @@ execute 'set_default_ruby' do
   cwd node['jrb_workstation']['home']
 end
 
-gems = [
-  'encrypt_data_bag'
-]
-
-gems.each do |g|
+node['jrb_workstation']['ruby']['gems'].each do |g|
   execute "install_gem[#{g}]" do
     command "gem install #{g} --no-rdoc --no-ri"
     not_if "gem list | grep -E \"#{g}\""
