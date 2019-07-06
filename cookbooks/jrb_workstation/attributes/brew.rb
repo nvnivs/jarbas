@@ -34,8 +34,6 @@ default['jrb_workstation']['brew']['packages'] = [
   'mtr',             # 'traceroute' and 'ping' in a single tool
   'pandoc',          # Swiss-army knife of markup format conversion
   'pass',            # Password manager
-  'python',          # Interpreted, interactive, object-oriented programming language
-  'python3',         # Interpreted, interactive, object-oriented programming language
   'portaudio',       # Required for libspotify
   'qemu',            # x86 and PowerPC Emulator
   'ranger',          # File browser
