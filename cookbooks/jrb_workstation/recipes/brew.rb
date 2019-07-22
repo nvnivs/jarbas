@@ -21,6 +21,9 @@ homebrew_package 'tcptraceroute'
 # Upgrade fails with "Error: wget 1.20.3_1 already installed"
 homebrew_package 'wget'
 
+# Upgrade fails with "e2fsprogs 1.44.5_1 already installed"
+homebrew_package 'e2fsprogs'
+
 # Terraform should have a fixed version, MAKE IT HAPPEN
 # homebrew_package 'terraform' do
 #  action :upgrade

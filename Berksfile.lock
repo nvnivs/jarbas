@@ -4,5 +4,5 @@ DEPENDENCIES
 
 GRAPH
   homebrew (5.0.8)
-  jrb_workstation (2.14.0)
+  jrb_workstation (2.16.0)
     homebrew (>= 0.0.0)

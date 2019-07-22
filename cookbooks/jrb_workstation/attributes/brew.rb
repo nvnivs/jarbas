@@ -14,7 +14,7 @@ default['jrb_workstation']['brew']['casks'] = [
   # microsoft-remote-desktop-beta
   'minikube', # Minikube is a tool that makes it easy to run Kubernetes locally.
   'mysql-shell',
-  # 'p4v',                           # Perforce SHASUM failures
+  'p4v',                           # Perforce SHASUM failures
   # slack
   # spotify
   # tunnelblick                   # VPN client
