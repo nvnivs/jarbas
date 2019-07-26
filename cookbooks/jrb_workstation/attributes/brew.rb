@@ -15,7 +15,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'minikube', # Minikube is a tool that makes it easy to run Kubernetes locally.
   'mysql-shell',
   'p4v',                           # Perforce SHASUM failures
-  # slack
+  'slack',
   # spotify
   # tunnelblick                   # VPN client
   'virtualbox',
