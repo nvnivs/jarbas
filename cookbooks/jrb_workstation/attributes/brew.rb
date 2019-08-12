@@ -3,7 +3,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'android-file-transfer',         # Android File Transfer
   'blue-jeans',                    # Video conferencing (TODO: does not auto install)
   'caffeine',                      # Prevents sleep
-  'chefdk',
+  'chef/chef/chefdk',
   'docker',
   # evernote
   # firefox                       # Firefox (TODO: would rather have dev edition but can find it on brew)
