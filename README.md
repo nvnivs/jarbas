@@ -34,3 +34,9 @@ To use custom cred for commits to this repo set the following in `.git/config`
     [user]
 	    name = your name
 	    email = your@email.com
+
+# Setup on a new mac book
+
+1. Download and install Git https://git-scm.com/download/mac
+2. Download and install Chef DK https://downloads.chef.io/chefdk
+3. Download and install Chef Infra Client for Mac https://downloads.chef.io/chef/current#mac_os_x
