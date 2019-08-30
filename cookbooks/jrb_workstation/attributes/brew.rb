@@ -10,7 +10,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'google-chrome',
   'gpg-suite', # encrypt, decrypt, sign and verify files or messages
   # iterm2                        # Terminal
-  'java8', # Java Standard Edition Development Kit
+  'java', # Java Standard Edition Development Kit
   # microsoft-remote-desktop-beta
   'minikube', # Minikube is a tool that makes it easy to run Kubernetes locally.
   'mysql-shell',
