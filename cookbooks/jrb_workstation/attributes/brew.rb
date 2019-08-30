@@ -4,7 +4,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'chef/chef/chefdk',
   'cyberduck',                     # FTP client
   'docker',
-  # firefox                       # Firefox (TODO: would rather have dev edition but can find it on brew)
+  'caskroom/versions/firefox-developer-edition',
   'google-chrome',
   'gpg-suite', # encrypt, decrypt, sign and verify files or messages
   # iterm2                        # Terminal
