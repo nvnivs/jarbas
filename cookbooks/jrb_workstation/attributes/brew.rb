@@ -32,7 +32,6 @@ default['jrb_workstation']['brew']['packages'] = [
   'jq',              # Lightweight and flexible command-line JSON processor
   'lynx',            # Text-based web browser
   'kubernetes-helm', # The Kubernetes package manager
-  'mtr',             # 'traceroute' and 'ping' in a single tool
   'pandoc',          # Swiss-army knife of markup format conversion
   'pass',            # Password manager
   'portaudio',       # Required for libspotify

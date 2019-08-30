@@ -24,6 +24,9 @@ homebrew_package 'wget'
 # Upgrade fails with "e2fsprogs 1.44.5_1 already installed"
 homebrew_package 'e2fsprogs'
 
+# Upgrade fais with "Error: mtr 0.93_1 already installed"
+homebrew_package 'mtr'
+
 # Terraform should have a fixed version, MAKE IT HAPPEN
 # homebrew_package 'terraform' do
 #  action :upgrade
