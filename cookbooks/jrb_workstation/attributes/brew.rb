@@ -4,7 +4,6 @@ default['jrb_workstation']['brew']['casks'] = [
   'chef/chef/chefdk',
   'cyberduck',                     # FTP client
   'docker',
-  # evernote
   # firefox                       # Firefox (TODO: would rather have dev edition but can find it on brew)
   'google-chrome',
   'gpg-suite', # encrypt, decrypt, sign and verify files or messages
