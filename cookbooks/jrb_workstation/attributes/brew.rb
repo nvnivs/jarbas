@@ -1,7 +1,6 @@
 # Available casks at https://github.com/Homebrew/homebrew-cask/tree/master/Casks
 default['jrb_workstation']['brew']['casks'] = [
   'android-file-transfer',         # Android File Transfer
-  'blue-jeans',                    # Video conferencing (TODO: does not auto install)
   'chef/chef/chefdk',
   'cyberduck',                     # FTP client
   'docker',
