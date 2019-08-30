@@ -7,7 +7,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'caskroom/versions/firefox-developer-edition',
   'google-chrome',
   'gpg-suite', # encrypt, decrypt, sign and verify files or messages
-  # iterm2                        # Terminal
+  'iterm2',
   'java', # Java Standard Edition Development Kit
   # microsoft-remote-desktop-beta
   'minikube', # Minikube is a tool that makes it easy to run Kubernetes locally.
