@@ -8,6 +8,7 @@ include_recipe 'jrb_workstation::osx-sudoers-nopass' if node['platform'] == 'mac
 include_recipe 'jrb_workstation::brew' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::brew-cask' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::vim'
+include_recipe 'jrb_workstation::iterm'
 include_recipe 'jrb_workstation::ruby'
 include_recipe 'jrb_workstation::vagrant'
 include_recipe 'jrb_workstation::python'
