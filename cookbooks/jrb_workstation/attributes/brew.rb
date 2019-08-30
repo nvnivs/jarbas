@@ -40,6 +40,7 @@ default['jrb_workstation']['brew']['packages'] = [
   'telnet',          # User interface to the TELNET protocol (built from macOS Sierra sources)
   'tree',            # Display directories as trees (with optional color/HTML output)
   'watch',           # Executes a program periodically, showing output fullscreen
+  'yamllint',        # Linter for YAML files
 ]
 
 default['jrb_workstation']['brew']['taps'] = [
