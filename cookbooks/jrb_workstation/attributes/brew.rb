@@ -2,7 +2,6 @@
 default['jrb_workstation']['brew']['casks'] = [
   'android-file-transfer',         # Android File Transfer
   'blue-jeans',                    # Video conferencing (TODO: does not auto install)
-  'caffeine',                      # Prevents sleep
   'chef/chef/chefdk',
   'docker',
   # evernote
@@ -20,6 +19,10 @@ default['jrb_workstation']['brew']['casks'] = [
   # tunnelblick                   # VPN client
   'virtualbox',
   'visual-studio-code'
+]
+
+default['jrb_workstation']['brew']['casks_blacklist'] = [
+  'caffeine',
 ]
 
 default['jrb_workstation']['brew']['packages'] = [
