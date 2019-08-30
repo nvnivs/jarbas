@@ -47,7 +47,7 @@ end
 
 node['jrb_workstation']['ruby']['gems'].each do |g|
   execute "install_gem[#{g}]" do
-    command "gem install #{g} --no-rdoc --no-ri"
+    command "gem install #{g}"
     not_if "gem list | grep -E \"#{g}\""
     user node['jrb_workstation']['user']
     environment ({
