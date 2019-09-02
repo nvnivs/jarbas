@@ -15,7 +15,6 @@ default['jrb_workstation']['brew']['casks'] = [
   'slack',
   'spotify',
   'virtualbox',
-  'visual-studio-code'
 ]
 
 default['jrb_workstation']['brew']['casks_blacklist'] = [
