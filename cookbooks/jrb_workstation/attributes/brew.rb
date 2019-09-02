@@ -13,7 +13,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'mysql-shell',
   'p4v',                           # Perforce SHASUM failures
   'slack',
-  # spotify
+  'spotify',
   # tunnelblick                   # VPN client
   'virtualbox',
   'visual-studio-code'
