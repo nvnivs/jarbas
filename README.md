@@ -51,3 +51,5 @@ To use custom cred for commits to this repo set the following in `.git/config`
 * gem install encrypt_data_bag fails with wrong ruby version
 
     rvm use ruby-2.5.5
+
+* iterm does not copy all the settings
