@@ -4,7 +4,8 @@ Chef repo to provision and configure workstations
 
 ## How to use
 
-    sudo whoami && berks install && berks update && berks vendor && sudo chef-client -z -o 'role[workstation]' -E macbook -j .chef/node.json
+1. Create a `.chef/node.json` from `.chef/node.example.json` with all the required attributes.
+2. Execute `./deploy.sh`
 
 ## Pre-requisites
 

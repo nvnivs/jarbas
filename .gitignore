@@ -1,7 +1,5 @@
 .chef/local-mode-cache/
 .chef/chef_guid
-
-# Local node definition
 .chef/node.json
 
 berks-cookbooks/
