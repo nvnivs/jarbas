@@ -7,6 +7,8 @@ Chef repo to provision and configure workstations
 1. Create a `.chef/node.json` from `.chef/node.example.json` with all the required attributes.
 2. Execute `./deploy.sh`
 
+To run a single recipe pass the recipe name as a parameter
+
 ## Pre-requisites
 
 * Git: You need to check stuff out somewhow
