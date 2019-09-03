@@ -36,8 +36,8 @@ node['jrb_workstation']['ruby']['rubies'].each do |version|
 end
 
 execute 'set_default_ruby' do
-  command "rvm use #{node['jrb_workstation']['ruby']['default_version']} --default"
-  not_if"rvm list | grep -F '* ruby-#{node['jrb_workstation']['ruby']['default_version']}'"
+  command "rvm --default #{node['jrb_workstation']['ruby']['default_version']}"
+  not_if"rvm list | grep -F '* #{node['jrb_workstation']['ruby']['default_version']}'"
   user node['jrb_workstation']['user']
   environment ({
     'HOME' => node['jrb_workstation']['home'],

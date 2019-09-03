@@ -51,8 +51,6 @@ To use custom cred for commits to this repo set the following in `.git/config`
 
     export LANG=en_US.US-ASCII
 
-* gem install encrypt_data_bag fails with wrong ruby version
-
-    rvm use ruby-2.5.5
+* rvm set default is not saving the default 
 
 * iterm does not copy all the settings
