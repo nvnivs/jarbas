@@ -24,6 +24,7 @@ default['jrb_workstation']['brew']['casks_blacklist'] = [
 default['jrb_workstation']['brew']['packages'] = [
   'ansible',         # Automate deployment, configuration, and upgrading
   'autossh',         # Automatically restart SSH sessions and tunnels
+  'aws-iam-authenticator', # Use AWS IAM credentials to authenticate to Kubernetes
   'coreutils',       # GNU File, Shell, and Text utilities
   'git',             # Distributed revision control system
   'golang',          # Open source programming language to build simple/reliable/efficient software
