@@ -3,6 +3,10 @@ DEPENDENCIES
     path: cookbooks/jrb_workstation
 
 GRAPH
+  chef-sugar (5.0.1)
   homebrew (5.0.8)
-  jrb_workstation (2.31.1)
+  jrb_workstation (2.32.0)
     homebrew (>= 0.0.0)
+    macos (>= 0.0.0)
+  macos (3.0.8)
+    chef-sugar (~> 5.0)

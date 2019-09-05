@@ -5,6 +5,7 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 include_recipe 'jrb_workstation::osx-sudoers-nopass' if node['platform'] == 'mac_os_x'
+include_recipe 'jrb_workstation::command-line-tools' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::brew' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::brew-cask' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::vim'

@@ -4,18 +4,30 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-jrb_workstation_execute 'disable_dashboard' do
-  command 'defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock'
+execute 'kill_dock' do
+  command 'killall Dock'
+  action :nothing
+end
+
+plist 'disable dashboard' do
+  path "#{node['jrb_workstation']['home']}/Library/Preferences/com.apple.dashboard.plist"
+  entry 'mcx-disabled'
+  value true
   only_if 'ps ax |grep [D]ash'
+  notifies :run, 'execute[kill_dock]', :delayed
 end
 
-jrb_workstation_execute 'set_dark_appearance' do
-  # killall Dock is not reloading
-  command 'defaults write NSGlobalDomain AppleInterfaceStyle Dark && killall Dock'
-  # guard is not working, executes all the time
-  not_if 'defaults read -g AppleInterfaceStyle |grep Dark'
+#TODO: Need to work out how to reload after execution
+plist 'set dark appearance' do
+  path "#{node['jrb_workstation']['home']}/Library/Preferences/.GlobalPreferences.plist"
+  entry 'AppleInterfaceStyle'
+  value 'Dark'
+  not_if "sudo -u #{node['jrb_workstation']['user']} defaults read NSGlobalDomain |grep AppleInterfaceStyle |grep Dark"
 end
 
-jrb_workstation_execute 'finder_show_all_files' do
-  command 'defaults write com.apple.finder AppleShowAllFiles YES'
+plist 'show hidden files in finder' do
+  path "#{node['jrb_workstation']['home']}/Library/Preferences/com.apple.finder.plist"
+  entry 'AppleShowAllFiles'
+  value true
+  not_if "sudo -u #{node['jrb_workstation']['user']} defaults read com.apple.finder AppleShowAllFiles |grep 1"
 end
