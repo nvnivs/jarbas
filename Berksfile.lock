@@ -4,9 +4,13 @@ DEPENDENCIES
 
 GRAPH
   chef-sugar (5.0.1)
+  dmg (4.1.1)
   homebrew (5.0.8)
-  jrb_workstation (2.32.0)
+  jrb_workstation (2.33.0)
     homebrew (>= 0.0.0)
     macos (>= 0.0.0)
+    vagrant (>= 0.0.0)
   macos (3.0.8)
     chef-sugar (~> 5.0)
+  vagrant (0.9.1)
+    dmg (>= 2.2.2)
