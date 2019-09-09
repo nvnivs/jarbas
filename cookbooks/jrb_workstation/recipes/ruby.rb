@@ -4,7 +4,7 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-package 'ruby'o
+package 'ruby'
 
 # Required by RVM
 package 'gpg2' do
