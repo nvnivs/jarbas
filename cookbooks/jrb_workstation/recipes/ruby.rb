@@ -4,9 +4,7 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-package 'ruby' do
-  action :upgrade
-end
+package 'ruby'o
 
 # Required by RVM
 package 'gpg2' do

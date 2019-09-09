@@ -17,12 +17,18 @@ plist 'disable dashboard' do
   notifies :run, 'execute[kill_dock]', :delayed
 end
 
-#TODO: Need to work out how to reload after execution
-plist 'set dark appearance' do
+plist 'General: Appearance' do
   path "#{node['jrb_workstation']['home']}/Library/Preferences/.GlobalPreferences.plist"
   entry 'AppleInterfaceStyle'
   value 'Dark'
   not_if "sudo -u #{node['jrb_workstation']['user']} defaults read NSGlobalDomain |grep AppleInterfaceStyle |grep Dark"
+end
+
+plist 'General: Accent colour' do
+  path "#{node['jrb_workstation']['home']}/Library/Preferences/.GlobalPreferences.plist"
+  entry 'AppleAquaColorVariant'
+  value 6
+  not_if "sudo -u #{node['jrb_workstation']['user']} defaults read NSGlobalDomain |grep AppleAquaColorVariant |grep 6"
 end
 
 plist 'show hidden files in finder' do
