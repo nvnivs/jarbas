@@ -4,13 +4,9 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 #
-package 'python' do
-  action :upgrade
-end
+package 'python'
 
-package 'python3' do
-  action :upgrade
-end
+package 'python3'
 
 execute 'download-pip3' do
   command 'curl -s https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py'
