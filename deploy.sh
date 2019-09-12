@@ -6,7 +6,7 @@ if [ -z "${1}" ]; then
 else
     runlist="recipe[jrb_workstation::osx-sudoers-nopass],recipe[jrb_workstation::${1}],recipe[jrb_workstation::osx-sudoers]"
 fi
-sudo whoami >/dev/null
+sudo -v
 berks install
 berks update
 berks vendor

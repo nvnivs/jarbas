@@ -9,7 +9,6 @@ default['jrb_workstation']['brew']['casks'] = [
   'gpg-suite', # encrypt, decrypt, sign and verify files or messages
   'java', # Java Standard Edition Development Kit
   'microsoft-remote-desktop-beta',
-  'minikube', # Minikube is a tool that makes it easy to run Kubernetes locally.
   'mysql-shell',
   'p4v',                           # Perforce SHASUM failures
   'slack',
@@ -24,14 +23,12 @@ default['jrb_workstation']['brew']['casks_blacklist'] = [
 default['jrb_workstation']['brew']['packages'] = [
   'ansible',         # Automate deployment, configuration, and upgrading
   'autossh',         # Automatically restart SSH sessions and tunnels
-  'aws-iam-authenticator', # Use AWS IAM credentials to authenticate to Kubernetes
   'coreutils',       # GNU File, Shell, and Text utilities
   'git',             # Distributed revision control system
   'golang',          # Open source programming language to build simple/reliable/efficient software
   'gptfdisk',        # Text-mode partitioning tools
   'jq',              # Lightweight and flexible command-line JSON processor
   'lynx',            # Text-based web browser
-  'kubernetes-helm', # The Kubernetes package manager
   'pandoc',          # Swiss-army knife of markup format conversion
   'pass',            # Password manager
   'portaudio',       # Required for libspotify
