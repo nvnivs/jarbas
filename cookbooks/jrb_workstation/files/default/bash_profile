@@ -1,0 +1,28 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Load the default .profile
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+
+# Make utilities available
+PATH="$HOME/bin:$PATH"
+
+# Source sh files in .alias directory
+for ALIAS in "${HOME}/.alias/*.sh"; do
+  [ -f "${ALIAS}" ] && . "${ALIAS}"
+done
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# powerline-shell: https://github.com/b-ryan/powerline-shell
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
