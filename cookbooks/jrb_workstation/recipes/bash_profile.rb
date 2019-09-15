@@ -5,7 +5,9 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 file "#{node['jrb_workstation']['home']}/.profile" do
-  action :delete
+  content ''
+  owner node['jrb_workstation']['user']
+  mode 0644
 end
 
 directory "#{node['jrb_workstation']['home']}/bin" do
