@@ -25,3 +25,9 @@ cookbook_file "#{node['jrb_workstation']['home']}/.bash_profile" do
   owner node['jrb_workstation']['user']
   mode 0644
 end
+
+cookbook_file "#{node['jrb_workstation']['home']}/Library/Fonts/Meslo LG M Regular for Powerline.ttf" do
+  source 'fonts/Meslo LG M Regular for Powerline.ttf'
+  owner node['jrb_workstation']['user']
+  mode 0644
+end

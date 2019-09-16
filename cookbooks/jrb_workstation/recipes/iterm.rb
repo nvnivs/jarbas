@@ -6,8 +6,4 @@
 
 homebrew_cask 'iterm2'
 
-cookbook_file "#{node['jrb_workstation']['home']}/Library/Preferences/com.googlecode.iterm2.plist" do
-  source 'Preferences/com.googlecode.iterm2.plist'
-  owner node['jrb_workstation']['user']
-  mode 0600
-end
+#TODO: Need to work out how to set the font with plist resource
