@@ -1,11 +1,8 @@
 #!/bin/bash
 
 set -e
-if [ -z "${1}" ]; then
-    runlist='role[workstation]'
-else
-    runlist="recipe[jrb_workstation::osx-sudoers-nopass],recipe[jrb_workstation::${1}],recipe[jrb_workstation::osx-sudoers]"
-fi
+recipe=${1:-default}
+runlist="recipe[jrb_workstation::osx-sudoers-nopass],recipe[jrb_workstation::${recipe}],recipe[jrb_workstation::osx-sudoers]"
 sudo -v
 berks install
 berks update

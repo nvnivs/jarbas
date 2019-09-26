@@ -6,6 +6,8 @@
 #
 # Description: Disables pass for root user on sudoers to enable non-interactive commands in chef
 
+return unless node['platform'] == 'mac_os_x'
+
 cookbook_file '/etc/sudoers' do
   source 'sudoers'
   owner 'root'
