@@ -8,8 +8,8 @@
 PATH="$HOME/bin:$PATH"
 
 # Source sh files in .alias directory
-for ALIAS in "${HOME}/.alias/*.sh"; do
-  [ -f "${ALIAS}" ] && . "${ALIAS}"
+for a in "${HOME}/.alias/*.sh"; do
+  . ${a}
 done
 
 # Load RVM into a shell session *as a function*
