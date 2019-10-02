@@ -8,7 +8,7 @@
 PATH="$HOME/bin:$PATH"
 
 # Source sh files in .alias directory
-for a in "${HOME}/.alias/*.sh"; do
+for a in $(ls ${HOME}/.alias/*.sh); do
   . ${a}
 done
 
