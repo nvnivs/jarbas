@@ -43,8 +43,3 @@ execute 'pip-install[awscli]' do
   command 'pip install awscli --upgrade'
   not_if 'which aws'
 end
-
-execute 'pip-install[powerline-shell]' do
-  command 'pip install powerline-shell --upgrade'
-  not_if 'which powerline-shell'
-end
