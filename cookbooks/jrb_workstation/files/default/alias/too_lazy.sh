@@ -1,6 +1,0 @@
-alias a="aws"
-alias g="git"
-alias k="kubectl"
-alias kn="knife"
-alias t="terraform"
-alias v="vagrant"

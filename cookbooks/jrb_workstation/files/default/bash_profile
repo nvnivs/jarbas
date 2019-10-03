@@ -7,11 +7,6 @@
 # Make utilities available
 PATH="$HOME/bin:$PATH"
 
-# Source sh files in .alias directory
-for a in $(ls ${HOME}/.alias/*.sh); do
-  . ${a}
-done
-
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

@@ -10,22 +10,6 @@ file "#{node['jrb_workstation']['home']}/.profile" do
   mode 0644
 end
 
-directory "#{node['jrb_workstation']['home']}/bin" do
-  owner node['jrb_workstation']['user']
-  mode 0755
-end
-
-directory "#{node['jrb_workstation']['home']}/.alias" do
-  owner node['jrb_workstation']['user']
-  mode 0755
-end
-
-remote_directory "#{node['jrb_workstation']['home']}/.alias" do
-  source 'alias'
-  files_owner node['jrb_workstation']['user']
-  files_mode '0644'
-end
-
 cookbook_file "#{node['jrb_workstation']['home']}/.bash_profile" do
   source 'bash_profile'
   owner node['jrb_workstation']['user']
