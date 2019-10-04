@@ -51,6 +51,6 @@ To use custom cred for commits to this repo set the following in `.git/config`
 
     export LANG=en_US.US-ASCII
 
-* rvm set default is not saving the default 
+* rvm set default is not saving the default
 
 * iterm does not copy all the settings
