@@ -12,30 +12,30 @@
 def which(cmd)
   exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
   ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
-    exts.each { |ext|
+    exts.each do |ext|
       exe = File.join(path, "#{cmd}#{ext}")
       return exe if File.executable?(exe) && !File.directory?(exe)
-    }
+    end
   end
-  return nil
+  nil
 end
 
 def outdated_casks
   # Return empty array if brew is not installed
   if which('brew').nil? then return [] end
 
-  outdated = Mixlib::ShellOut.new("brew cask outdated",
-                                  :user => node['jrb_workstation']['user'],
-                                  :environment => ({
+  outdated = Mixlib::ShellOut.new('brew cask outdated',
+                                  user: node['jrb_workstation']['user'],
+                                  environment: {
                                     'HOME' => node['jrb_workstation']['home'],
-                                    'USER' => node['jrb_workstation']['user'] }),
-                                  :cwd => node['jrb_workstation']['home'])
+                                    'USER' => node['jrb_workstation']['user'] },
+                                  cwd: node['jrb_workstation']['home'])
   outdated.run_command
 
-  if outdated.error? then
+  if outdated.error?
     Chef::Log.fatal(outdated.stderr)
     raise 'Fail to get outdated casks'
-   end
+  end
 
-  outdated.stdout.each_line.map{ |c| c.gsub('\n', '').strip }
+  outdated.stdout.each_line.map { |c| c.gsub('\n', '').strip }
 end

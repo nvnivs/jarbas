@@ -7,11 +7,11 @@
 file "#{node['jrb_workstation']['home']}/.profile" do
   content ''
   owner node['jrb_workstation']['user']
-  mode 0644
+  mode '644'
 end
 
 cookbook_file "#{node['jrb_workstation']['home']}/.bash_profile" do
   source 'bash_profile'
   owner node['jrb_workstation']['user']
-  mode 0644
+  mode '644'
 end

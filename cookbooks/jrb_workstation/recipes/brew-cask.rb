@@ -30,13 +30,8 @@ end
 
 # Update outdated casks
 outdated_casks do |cask|
-  execute "brew_cask_upgrade[#{cask}]" do
+  jrb_workstation_execute "brew_cask_upgrade[#{cask}]" do
     command "brew cask upgrade #{cask}"
     only_if { casks.include? cask }
-    user node['jrb_workstation']['user']
-    environment ({
-      'HOME' => node['jrb_workstation']['home'],
-      'USER' => node['jrb_workstation']['user'] })
-    cwd node['jrb_workstation']['home']
   end
 end

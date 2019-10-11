@@ -10,7 +10,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'java', # Java Standard Edition Development Kit
   'microsoft-remote-desktop-beta',
   'mysql-shell',
-  'p4v',                           # Perforce SHASUM failures
+  'p4v', # Perforce SHASUM failures
   'slack',
   'spotify',
   'virtualbox',
@@ -44,9 +44,9 @@ default['jrb_workstation']['brew']['packages'] = [
 default['jrb_workstation']['brew']['taps'] = [
   'caskroom/cask',
   'caskroom/versions',
-  'chef/chef'
+  'chef/chef',
 ]
 
 default['jrb_workstation']['brew']['taps_blacklist'] = [
-  'homebrew/cask-versions'   
+  'homebrew/cask-versions',
 ]

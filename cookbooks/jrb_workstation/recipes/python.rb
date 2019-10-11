@@ -5,41 +5,25 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 #
 package 'python'
-
 package 'python3'
 
-execute 'download-pip3' do
-  command 'curl -s https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py'
-  not_if 'which pip3'
-  notifies :run, 'execute[install-pip]', :immediately
-  user node['jrb_workstation']['user']
-  environment ({
-    'HOME' => node['jrb_workstation']['home'],
-    'USER' => node['jrb_workstation']['user'] })
-  cwd node['jrb_workstation']['home']
+jrb_workstation_execute 'download-pip3' do
+  command  'curl -s https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py'
+  not_if   'which pip3'
+  notifies :run, 'jrb_workstation_execute[install-pip]', :immediately
 end
 
-execute 'install-pip3' do
+jrb_workstation_execute 'install-pip3' do
   command 'python /tmp/get-pip.py --user'
-  action :nothing
-  user node['jrb_workstation']['user']
-  environment ({
-    'HOME' => node['jrb_workstation']['home'],
-    'USER' => node['jrb_workstation']['user'] })
-  cwd node['jrb_workstation']['home']
+  action  :nothing
 end
 
-execute 'install-pip' do
+jrb_workstation_execute 'install-pip' do
   command 'sudo easy_install pip'
-  not_if 'which pip'
-  user node['jrb_workstation']['user']
-  environment ({
-    'HOME' => node['jrb_workstation']['home'],
-    'USER' => node['jrb_workstation']['user'] })
-  cwd node['jrb_workstation']['home']
+  not_if  'which pip'
 end
 
-execute 'pip-install[awscli]' do
+jrb_workstation_execute 'pip-install[awscli]' do
   command 'pip install awscli --upgrade'
-  not_if 'which aws'
+  not_if  'which aws'
 end

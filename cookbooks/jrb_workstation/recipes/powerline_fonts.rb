@@ -9,7 +9,7 @@ git "#{node['jrb_workstation']['home']}/fonts" do
   action     :checkout
   depth      1
   user       node['jrb_workstation']['user']
-  notifies   :run, "jrb_workstation_execute[install_fonts]", :immediately
+  notifies   :run, 'jrb_workstation_execute[install_fonts]', :immediately
 end
 
 jrb_workstation_execute 'install_fonts' do

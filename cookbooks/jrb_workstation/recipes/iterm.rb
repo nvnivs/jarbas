@@ -6,4 +6,4 @@
 
 homebrew_cask 'iterm2'
 
-#TODO: Need to work out how to set the font with plist resource
+# TODO: Need to work out how to set the font with plist resource
