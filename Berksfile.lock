@@ -3,12 +3,10 @@ DEPENDENCIES
     path: cookbooks/jrb_workstation
 
 GRAPH
-  dmg (4.1.1)
   homebrew (5.0.8)
   jrb_workstation (2.45.0)
     homebrew (>= 0.0.0)
     macos (>= 0.0.0)
     vagrant (>= 0.0.0)
   macos (3.1.0)
-  vagrant (0.9.1)
-    dmg (>= 2.2.2)
+  vagrant (2.0.0)
