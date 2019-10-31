@@ -8,4 +8,5 @@ default['jrb_workstation']['ruby']['rubies'] = [
 
 default['jrb_workstation']['ruby']['gems'] = [
   'encrypt_data_bag',
+  'knife-opc'
 ]
