@@ -27,8 +27,6 @@ homebrew_package 'e2fsprogs'
 # Upgrade fais with "Error: mtr 0.93_1 already installed"
 homebrew_package 'mtr'
 
-# Terraform should have a fixed version, MAKE IT HAPPEN
-# homebrew_package 'terraform' do
-#  action :upgrade
-#  version '0.11.11' # Version is being blatantly ignored :(
-# end
+homebrew_package 'terraform' do
+  version '0.12.13'
+end

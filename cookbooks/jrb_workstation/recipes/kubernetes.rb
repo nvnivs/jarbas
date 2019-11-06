@@ -9,7 +9,6 @@ package 'kubernetes-cli' do
 end
 
 package 'kubernetes-helm' do
-  action :upgrade
   version 'v2.12.2'
 end
 
