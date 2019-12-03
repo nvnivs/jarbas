@@ -28,5 +28,6 @@ homebrew_package 'e2fsprogs'
 homebrew_package 'mtr'
 
 homebrew_package 'terraform' do
-  version '0.12.13'
+  action :upgrade
+  version '0.12.16'
 end
