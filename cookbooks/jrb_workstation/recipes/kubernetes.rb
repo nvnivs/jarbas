@@ -16,4 +16,6 @@ package 'aws-iam-authenticator' do
   action :upgrade
 end
 
-homebrew_cask 'minikube'
+package 'minikube' do
+  action :upgrade
+end
