@@ -1,4 +1,3 @@
-#
 # Cookbook:: jrb_workstation
 # Recipe:: brew
 #
@@ -28,6 +27,7 @@ homebrew_package 'e2fsprogs'
 homebrew_package 'mtr'
 
 homebrew_package 'terraform' do
-  action :upgrade
-  version '0.12.16'
+  version '0.12.17'
 end
+
+
