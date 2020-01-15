@@ -27,7 +27,7 @@ homebrew_package 'e2fsprogs'
 homebrew_package 'mtr'
 
 homebrew_package 'terraform' do
-  version '0.12.17'
+  version '0.12.18'
 end
 
 
