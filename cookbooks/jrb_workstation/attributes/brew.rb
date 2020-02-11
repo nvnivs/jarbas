@@ -11,6 +11,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'microsoft-remote-desktop-beta',
   'mysql-shell',
   'p4v', # Perforce SHASUM failures
+  'rectangle', # Rectangle is a window management app based on Spectacle, written in Swift.
   'slack',
   'spotify',
   'virtualbox',
