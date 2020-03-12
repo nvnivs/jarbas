@@ -1,33 +1,33 @@
 filetype off " required
 call plug#begin('~/.vim/plugged')
-    " Status line
-    Plug 'bling/vim-airline'
+  " Status line
+  Plug 'bling/vim-airline'
 
-    " Themes for airline
-    Plug 'vim-airline/vim-airline-themes'
+  " Themes for airline
+  Plug 'vim-airline/vim-airline-themes'
 
-    " Automatic delimiter adding
-    Plug 'Raimondi/delimitMate'
+  " Automatic delimiter adding
+  Plug 'Raimondi/delimitMate'
 
-    " Github integration
-    Plug 'tpope/vim-fugitive'
+  " Github integration
+  Plug 'tpope/vim-fugitive'
 
-    " Improved tree
-    Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+  " Improved tree
+  Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 
-    " Class outline viewer
-    Plug 'majutsushi/tagbar', { 'on': ['Tagbar'] }
+  " Class outline viewer
+  Plug 'majutsushi/tagbar', { 'on': ['Tagbar'] }
 
-    " Tab completion
-    Plug 'ervandew/supertab'
+  " Tab completion
+  Plug 'ervandew/supertab'
 
 	" Inspect startup time of vim
-    Plug 'tweekmonster/startuptime.vim'
+  Plug 'tweekmonster/startuptime.vim'
 
 	" Ruby
 	Plug 'vim-ruby/vim-ruby', { 'for': [ 'ruby' ] }
 
-    " Terraform
+  " Terraform
 	Plug 'hashivim/vim-terraform', { 'for': [ 'terraform' ] }
 
 	" Python
