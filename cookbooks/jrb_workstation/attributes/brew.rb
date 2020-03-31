@@ -3,7 +3,7 @@ default['jrb_workstation']['brew']['casks'] = [
   'android-file-transfer',         # Android File Transfer
   'chef/chef/chefdk',
   'cyberduck',                     # FTP client
-  'docker',
+  'docker',                        # NOTE: need to open with `open /Applications/Docker.app` to authorize
   'caskroom/versions/firefox-developer-edition',
   'google-chrome',
   'gpg-suite', # encrypt, decrypt, sign and verify files or messages
