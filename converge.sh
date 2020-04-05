@@ -8,4 +8,4 @@ sudo -v
 if [ -f Berksfile.lock ]; then rm -rf Berksfile.lock; fi
 berks install
 berks vendor
-echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin
+echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin --chef-license accept
