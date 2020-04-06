@@ -24,13 +24,13 @@ end
 
 jrb_workstation_execute 'install_rvm' do
   command 'curl -sSL https://get.rvm.io | bash -s stable'
-  not_if  "ls #{rvm_path}"
+  not_if "which rvm"
 end
 
 node['jrb_workstation']['ruby']['rubies'].each do |version|
   jrb_workstation_execute "install_ruby[#{version}]" do
-    command "#{rvm_path} install #{version}"
-    not_if  "#{rvm_path} list | grep -E #{version}"
+    command "source #{rvm_path}; rvm install #{version}"
+    not_if  "source #{rvm_path}; rvm list | grep -E #{version}"
   end
 end
 
