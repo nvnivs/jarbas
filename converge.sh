@@ -2,7 +2,7 @@
 
 set -e
 recipe=${1:-default}
-runlist="recipe[jrb_workstation::osx-sudoers-nopass],recipe[jrb_workstation::${recipe}],recipe[jrb_workstation::osx-sudoers]"
+runlist="recipe[jrb_workstation::osx_sudoers_nopass],recipe[jrb_workstation::${recipe}],recipe[jrb_workstation::osx_sudoers]"
 json='{"jrb_workstation":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
 sudo -v
 if [ -f Berksfile.lock ]; then rm -rf Berksfile.lock; fi
