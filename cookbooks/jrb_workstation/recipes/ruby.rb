@@ -6,8 +6,7 @@
 
 package 'ruby'
 
-# Required by RVM
-package 'gpg2' do
+package 'gnupg' do
   action :upgrade
 end
 
