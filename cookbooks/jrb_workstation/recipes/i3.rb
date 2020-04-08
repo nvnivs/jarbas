@@ -7,9 +7,9 @@
 home = node['jrb_workstation']['home']
 user = node['jrb_workstation']['user']
 
+# xorgs setup
 package 'xorg-server'
 package 'xorg-xinit'
-package 'i3-wm'
 
 # To manage screen resolution
 #TODO: currently failing with "Can't open display"
@@ -21,8 +21,26 @@ template "#{home}/.xinitrc" do
   mode   '0644'
 end
 
+# i3
+package 'i3-wm'
+
 template "#{home}/.config/i3/config" do
-  source 'i3config.erb'
+  source 'i3_config.erb'
+  owner  user
+  mode   '0644'
+end
+
+# i3 status
+#TODO: Broken, looks related to the locale issues
+package 'i3status'
+
+directory "#{home}/.config/i3status/" do
+  owner user
+  mode  '0644'
+end
+
+template "#{home}/.config/i3status/config" do
+  source 'i3status_config.erb'
   owner  user
   mode   '0644'
 end
