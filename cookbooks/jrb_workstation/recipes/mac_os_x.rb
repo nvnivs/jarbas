@@ -1,6 +1,6 @@
 #
 # Cookbook:: jrb_workstation
-# Recipe:: osx-settings
+# Recipe:: mac_os_x
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
