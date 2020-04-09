@@ -1,25 +1,25 @@
 # jarbas
 
-Chef repo to provision and configure workstations
+A rather opinionated Chef repo to provision and configure workstations
 
 ## How to use
 
+Execute the berks download script to update the cookbooks dependencies.
+
+    $ ./bin/berks_update.sh
+
 Run the converge script to execute the entire setup
 
-    $ ./converge.sh
+    $ ./bin/converge.sh
 
 Alternatively pass a single recipe as a parameter
 
-    $ ./converge.sh brew
+    $ ./bin/converge.sh brew
 
 ## Pre-requisites
 
 * Git: You need to check stuff out somewhow
 * ChefDK: You need chef, you need berkshelf
-
-Installing chef client:
-
-    curl -L https://omnitruck.chef.io/install.sh | sudo bash
 
 ## Git config
 
