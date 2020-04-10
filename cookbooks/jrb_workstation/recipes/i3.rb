@@ -31,7 +31,6 @@ template "#{home}/.config/i3/config" do
 end
 
 # i3 status
-#TODO: Broken, looks related to the locale issues
 package 'i3status'
 
 directory "#{home}/.config/i3status/" do
@@ -44,3 +43,6 @@ template "#{home}/.config/i3status/config" do
   owner  user
   mode   '0644'
 end
+
+package 'i3lock'
+package 'rofi'
