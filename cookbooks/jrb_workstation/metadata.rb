@@ -6,8 +6,8 @@ description 'Installs/Configures workstation'
 long_description 'Installs/Configures workstation'
 version '3.7.0'
 chef_version '>= 12.14' if respond_to?(:chef_version)
-# issues_url 'https://github.com/<insert_org_here>/jrb_workstation/issues'
-# source_url 'https://github.com/<insert_org_here>/jrb_workstation'
+issues_url 'https://github.com/z0c/jarbas/issues'
+source_url 'https://github.com/z0c/jarbas'
 
 supports 'arch'
 supports 'mac_os_x'
