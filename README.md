@@ -4,10 +4,6 @@ A rather opinionated Chef repo to provision and configure workstations
 
 ## How to use
 
-Execute the berks download script to update the cookbooks dependencies.
-
-    $ ./bin/berks_update.sh
-
 Run the converge script to execute the entire setup
 
     $ ./bin/converge.sh
@@ -15,6 +11,10 @@ Run the converge script to execute the entire setup
 Alternatively pass a single recipe as a parameter
 
     $ ./bin/converge.sh brew
+
+After the first setup, `converge.sh` is aliased to `j`, so the above can be used as
+
+    $ j brew
 
 ## Pre-requisites
 
