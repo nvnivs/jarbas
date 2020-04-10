@@ -20,8 +20,11 @@ include_recipe 'jrb_workstation::bash_profile'
 include_recipe 'jrb_workstation::powerline_fonts'
 
 # Terminal
+include_recipe 'jrb_workstation::termite' if node['platform'] == 'arch'
 include_recipe 'jrb_workstation::iterm' if node['platform'] == 'mac_os_x'
-include_recipe 'jrb_workstation::termite'if node['platform'] == 'arch'
+
+# Brwoser
+include_recipe 'jrb_workstation::qutebrowser' if node['platform'] == 'arch'
 
 include_recipe 'jrb_workstation::vagrant' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::vscode' if node['platform'] == 'mac_os_x'
