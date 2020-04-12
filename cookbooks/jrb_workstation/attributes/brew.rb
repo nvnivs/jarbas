@@ -34,7 +34,6 @@ default['jrb_workstation']['brew']['packages'] = [
   'pass',            # Password manager
   'portaudio',       # Required for libspotify
   'qemu',            # x86 and PowerPC Emulator
-  'ranger',          # File browser
   'telnet',          # User interface to the TELNET protocol (built from macOS Sierra sources)
   'tree',            # Display directories as trees (with optional color/HTML output)
   'watch',           # Executes a program periodically, showing output fullscreen

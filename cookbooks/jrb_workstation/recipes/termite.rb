@@ -5,6 +5,7 @@
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
 home = node['jrb_workstation']['home']
+user = node['jrb_workstation']['user']
 
 package 'termite'
 
@@ -20,5 +21,3 @@ template "#{home}/.config/termite/config" do
   group  user
   mode   '0644'
 end
-
-

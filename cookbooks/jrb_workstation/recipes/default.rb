@@ -10,6 +10,7 @@ include_recipe 'jrb_workstation::mac_os_x' if node['platform'] == 'mac_os_x'
 
 include_recipe 'jrb_workstation::zsh'
 include_recipe 'jrb_workstation::vim'
+include_recipe 'jrb_workstation::ranger'
 include_recipe 'jrb_workstation::command_line_tools' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::brew' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::brew_cask' if node['platform'] == 'mac_os_x'
