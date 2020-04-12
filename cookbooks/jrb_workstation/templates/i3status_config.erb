@@ -7,11 +7,11 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-	colors   		    = true
-	interval   	    = 5
-	color_good      = '#90a959'
-	color_degraded  = '#f4bf75'
-	color_bad       = '#ac4142'
+  colors   		    = true
+  interval   	    = 5
+  color_good      = '#90a959'
+  color_degraded  = '#f4bf75'
+  color_bad       = '#ac4142'
 }
 
 order += "volume master"
@@ -34,16 +34,16 @@ ethernet _first_ {
 }
 
 battery all {
-	format                      = " %status %percentage %remaining "
+  format                      = " %status %percentage %remaining "
   status_chr                  = "charging"
   status_bat                  = "battery"
   status_full                 = "full"
-	format_down                 = ""
-	last_full_capacity          = true
-	integer_battery_capacity    = true
-	low_threshold               = 11
-	threshold_type              = percentage
-	hide_seconds                = true
+  format_down                 = ""
+  last_full_capacity          = true
+  integer_battery_capacity    = true
+  low_threshold               = 11
+  threshold_type              = percentage
+  hide_seconds                = true
 }
 
 tztime local {
@@ -59,7 +59,7 @@ load {
 }
 
 cpu_usage {
-	format = " cpu %usage %"
+  format = " cpu %usage %"
 }
 
 cpu_temperature 1 {
@@ -71,9 +71,9 @@ disk "/" {
 }
 
 volume master {
-	format 		    = "vol %volume "
-	format_muted    = "vol - "
-	device 		    = "default"
-	mixer 		    = "Master"
+  format 		    = "vol %volume "
+  format_muted    = "vol - "
+  device 		    = "default"
+  mixer 		    = "Master"
   mixer_idx   	= 0
 }

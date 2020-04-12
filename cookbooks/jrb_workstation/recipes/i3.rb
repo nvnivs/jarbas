@@ -35,12 +35,14 @@ package 'i3status'
 
 directory "#{home}/.config/i3status/" do
   owner user
-  mode  '0644'
+  group user
+  mode  '0755'
 end
 
 template "#{home}/.config/i3status/config" do
   source 'i3status_config.erb'
   owner  user
+  group  user
   mode   '0644'
 end
 
