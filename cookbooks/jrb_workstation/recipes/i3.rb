@@ -46,5 +46,23 @@ template "#{home}/.config/i3status/config" do
   mode   '0644'
 end
 
+# i3 lock
 package 'i3lock'
+
+# rofi for the menu
 package 'rofi'
+
+directory "#{home}/.config/rofi/" do
+  owner user
+  group user
+  mode  '0755'
+end
+
+template "#{home}/.config/rofi/config" do
+  source 'rofi_config.erb'
+  owner  user
+  group  user
+  mode   '0644'
+end
+
+
