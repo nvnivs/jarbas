@@ -22,7 +22,6 @@ default['jrb_workstation']['brew']['casks_blacklist'] = [
 ]
 
 default['jrb_workstation']['brew']['packages'] = [
-  'ansible',         # Automate deployment, configuration, and upgrading
   'autossh',         # Automatically restart SSH sessions and tunnels
   'coreutils',       # GNU File, Shell, and Text utilities
   'golang',          # Open source programming language to build simple/reliable/efficient software
@@ -34,7 +33,6 @@ default['jrb_workstation']['brew']['packages'] = [
   'portaudio',       # Required for libspotify
   'qemu',            # x86 and PowerPC Emulator
   'telnet',          # User interface to the TELNET protocol (built from macOS Sierra sources)
-  'tree',            # Display directories as trees (with optional color/HTML output)
   'watch',           # Executes a program periodically, showing output fullscreen
   'yamllint',        # Linter for YAML files
 ]

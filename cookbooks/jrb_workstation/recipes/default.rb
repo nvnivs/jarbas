@@ -15,11 +15,13 @@ include_recipe 'jrb_workstation::vim'
 include_recipe 'jrb_workstation::git'
 include_recipe 'jrb_workstation::ranger'
 include_recipe 'jrb_workstation::command_line_tools' if node['platform'] == 'mac_os_x'
+include_recipe 'jrb_workstation::packages'
 include_recipe 'jrb_workstation::brew' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::brew_cask' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::ruby'
 include_recipe 'jrb_workstation::python'
 include_recipe 'jrb_workstation::aws'
+include_recipe 'jrb_workstation::terraform'
 
 # Terminal
 include_recipe 'jrb_workstation::termite' if node['platform'] == 'arch'
