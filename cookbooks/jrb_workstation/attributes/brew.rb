@@ -28,7 +28,6 @@ default['jrb_workstation']['brew']['packages'] = [
   'jq',              # Lightweight and flexible command-line JSON processor
   'lynx',            # Text-based web browser
   'pandoc',          # Swiss-army knife of markup format conversion
-  'pass',            # Password manager
   'portaudio',       # Required for libspotify
   'qemu',            # x86 and PowerPC Emulator
   'telnet',          # User interface to the TELNET protocol (built from macOS Sierra sources)

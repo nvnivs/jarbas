@@ -1,6 +1,7 @@
 # List of default os packages to install or upgrade
 default['jrb_workstation']['packages']['upgrade'] = [
   'autossh',         # Automatically restart SSH sessions and tunnels
+  'pass',            # Password manager
   'tree',            # Display directories as trees (with optional color/HTML output)
 ]
 
