@@ -33,4 +33,5 @@ include_recipe 'jrb_workstation::vscode' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::kubernetes' if node['platfrom'] == 'mac_os_x'
 
 # Window manager
+include_recipe 'jrb_workstation::xorg' if node['platfrom'] == 'arch'
 include_recipe 'jrb_workstation::i3' if node['platfrom'] == 'arch'
