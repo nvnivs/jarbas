@@ -7,12 +7,17 @@
 home = node['jrb_workstation']['home']
 user = node['jrb_workstation']['user']
 
-# xorgs setup
+# xorg
 package 'xorg-server'
-package 'xorg-xinit'
 
-# Manage screen resolution
-package 'xorg-xrandr'
+template "#{home}/.Xresources" do
+  source 'Xresources.erb'
+  owner  user
+  mode   '0644'
+end
+
+# xinit
+package 'xorg-xinit'
 
 template "#{home}/.xinitrc" do
   source 'xinitrc.erb'
@@ -20,8 +25,11 @@ template "#{home}/.xinitrc" do
   mode   '0644'
 end
 
-template "#{home}/.Xresources" do
-  source 'Xresources.erb'
-  owner  user
-  mode   '0644'
-end
+# Manage screen resolution
+package 'xorg-xrandr'
+
+# Command line interface to the X11 clipboard
+package 'xclip'
+
+# Launch shell commands with your keyboard or your mouse under X
+package 'xbindkeys'
