@@ -7,26 +7,18 @@
 rvm_path='~/.rvm/scripts/rvm'
 
 package 'ruby'
+package 'gnupg'
 
-package 'gnupg' do
-  action :upgrade
-end
-
-#TODO: Guards not working on any of the below
-
-jrb_workstation_execute 'install_gpg_keys' do
-  command 'gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
-  not_if 'gpg2 --list-keys | grep -c 409B6B1796C275462A1703113804BB82D39DC0E3'
-end
-
-jrb_workstation_execute 'install_gpg_keys' do
-  command 'gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 7D2BAF1CF37B13E2069D6956105BD0E739499BDB'
-  not_if 'gpg2 --list-keys | grep -c 7D2BAF1CF37B13E2069D6956105BD0E739499BDB'
+node['jrb_workstation']['ruby']['gpg_keys'].each do |key|
+  jrb_workstation_execute "install_gpg_key[#{key}]" do
+    command "gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys #{key}"
+    not_if  "gpg2 --list-keys | grep #{key}"
+  end
 end
 
 jrb_workstation_execute 'install_rvm' do
   command 'curl -sSL https://get.rvm.io | bash -s stable'
-  not_if "which rvm"
+  not_if  "which rvm"
 end
 
 node['jrb_workstation']['ruby']['rubies'].each do |version|
