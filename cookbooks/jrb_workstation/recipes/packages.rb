@@ -15,3 +15,13 @@ end
 node['jrb_workstation']['packages']['install'].each do |p|
   package p
 end
+
+# Arch only packages
+node['jrb_workstation']['packages']['arch'].each do |p|
+  package p do
+    action  :upgrade
+    only_if { node['platform'] == 'arch' }
+  end
+end
+
+
