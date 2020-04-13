@@ -20,4 +20,8 @@ template "#{home}/.xinitrc" do
   mode   '0644'
 end
 
-
+template "#{home}/.Xresources" do
+  source 'Xresources.erb'
+  owner  user
+  mode   '0644'
+end
