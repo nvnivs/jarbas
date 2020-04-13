@@ -1,6 +1,7 @@
 #
 # Cookbook:: jrb_workstation
-# Recipe:: arch
+# Recipe:: git
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
+package 'git'

@@ -25,7 +25,6 @@ default['jrb_workstation']['brew']['packages'] = [
   'ansible',         # Automate deployment, configuration, and upgrading
   'autossh',         # Automatically restart SSH sessions and tunnels
   'coreutils',       # GNU File, Shell, and Text utilities
-  'git',             # Distributed revision control system
   'golang',          # Open source programming language to build simple/reliable/efficient software
   'gptfdisk',        # Text-mode partitioning tools
   'jq',              # Lightweight and flexible command-line JSON processor
