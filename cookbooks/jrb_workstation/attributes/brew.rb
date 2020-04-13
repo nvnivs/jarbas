@@ -22,7 +22,6 @@ default['jrb_workstation']['brew']['casks_blacklist'] = [
 ]
 
 default['jrb_workstation']['brew']['packages'] = [
-  'autossh',         # Automatically restart SSH sessions and tunnels
   'coreutils',       # GNU File, Shell, and Text utilities
   'golang',          # Open source programming language to build simple/reliable/efficient software
   'gptfdisk',        # Text-mode partitioning tools
