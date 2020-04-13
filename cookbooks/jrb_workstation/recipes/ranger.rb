@@ -11,13 +11,11 @@ package 'ranger'
 
 directory "#{home}/.config/ranger/" do
   owner user
-  group user
   mode  '0755'
 end
 
 template "#{home}/.config/ranger/rc.conf" do
   source 'rc_conf.erb'
   owner  user
-  group  user
   mode   '0644'
 end

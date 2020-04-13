@@ -20,14 +20,12 @@ package 'i3status'
 
 directory "#{home}/.config/i3status/" do
   owner user
-  group user
   mode  '0755'
 end
 
 template "#{home}/.config/i3status/config" do
   source 'i3status_config.erb'
   owner  user
-  group  user
   mode   '0644'
 end
 
@@ -39,15 +37,11 @@ package 'rofi'
 
 directory "#{home}/.config/rofi/" do
   owner user
-  group user
   mode  '0755'
 end
 
 template "#{home}/.config/rofi/config" do
   source 'rofi_config.erb'
   owner  user
-  group  user
   mode   '0644'
 end
-
-
