@@ -4,7 +4,7 @@ DEPENDENCIES
 
 GRAPH
   homebrew (5.0.8)
-  jrb_workstation (3.7.0)
+  jrb_workstation (3.8.0)
     homebrew (>= 0.0.0)
     macos (>= 0.0.0)
     vagrant (>= 0.0.0)
