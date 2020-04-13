@@ -7,6 +7,7 @@
 home = node['jrb_workstation']['home']
 user = node['jrb_workstation']['user']
 
+# i3 window manager
 package 'i3-wm'
 
 template "#{home}/.config/i3/config" do
