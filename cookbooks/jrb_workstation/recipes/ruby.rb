@@ -28,11 +28,13 @@ node['jrb_workstation']['ruby']['rubies'].each do |version|
   end
 end
 
+#TODO: Defaut is not setting
 jrb_workstation_execute 'set_default_ruby' do
   command "#{rvm_path} --default #{node['jrb_workstation']['ruby']['default_version']}"
   not_if  "#{rvm_path} list | grep -F '* #{node['jrb_workstation']['ruby']['default_version']}'"
 end
 
+#TODO: Gems are not installing
 node['jrb_workstation']['ruby']['gems'].each do |g|
   jrb_workstation_execute "install_gem[#{g}]" do
     command "gem install #{g}"

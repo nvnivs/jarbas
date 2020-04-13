@@ -9,6 +9,8 @@ include_recipe 'jrb_workstation::arch' if node['platform'] == 'arch'
 include_recipe 'jrb_workstation::mac_os_x' if node['platform'] == 'mac_os_x'
 
 include_recipe 'jrb_workstation::zsh'
+include_recipe 'jrb_workstation::bash_profile'
+include_recipe 'jrb_workstation::powerline_fonts'
 include_recipe 'jrb_workstation::vim'
 include_recipe 'jrb_workstation::git'
 include_recipe 'jrb_workstation::ranger'
@@ -18,8 +20,6 @@ include_recipe 'jrb_workstation::brew_cask' if node['platform'] == 'mac_os_x'
 include_recipe 'jrb_workstation::ruby'
 include_recipe 'jrb_workstation::python'
 include_recipe 'jrb_workstation::aws'
-include_recipe 'jrb_workstation::bash_profile'
-include_recipe 'jrb_workstation::powerline_fonts'
 
 # Terminal
 include_recipe 'jrb_workstation::termite' if node['platform'] == 'arch'
