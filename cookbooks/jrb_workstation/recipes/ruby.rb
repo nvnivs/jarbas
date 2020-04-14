@@ -14,7 +14,7 @@ package 'gnupg'
 node['jrb_workstation']['ruby']['gpg_keys'].each do |key|
   jrb_workstation_execute "install_gpg_key[#{key}]" do
     command "gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys #{key}"
-    not_if  "gpg2 --list-keys | grep '#{key}'", :user => user
+    not_if  "gpg2 -k #{key}", :user => user
   end
 end
 
