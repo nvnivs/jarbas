@@ -10,11 +10,12 @@ user     = node['jrb_workstation']['user']
 package 'ruby'
 package 'gnupg'
 
-#TODO: Guard not working
 node['jrb_workstation']['ruby']['gpg_keys'].each do |key|
   jrb_workstation_execute "install_gpg_key[#{key}]" do
     command "gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys #{key}"
-    not_if  "gpg2 -k #{key}", :user => user
+    not_if  "gpg2 -k #{key}",
+            :user => user,
+            :environment => { 'HOME' => node['jrb_workstation']['home']}
   end
 end
 
@@ -35,10 +36,12 @@ jrb_workstation_execute 'default_ruby' do
   not_if  "source #{rvm_path}; rvm list | grep -F '* #{node['jrb_workstation']['ruby']['default_version']}'", :user => user
 end
 
-#TODO: Guard not working
 node['jrb_workstation']['ruby']['gems'].each do |g|
   jrb_workstation_execute "install_gem[#{g}]" do
     command           "gem install #{g}"
-    not_if            "gem list | grep -E '#{g}'", :user => user
+    not_if            "gem list | grep -E '#{g}'",
+                      :user => user,
+                      :environment => { 'HOME' => node['jrb_workstation']['home']}
+
   end
 end
