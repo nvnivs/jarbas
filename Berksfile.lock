@@ -1,4 +1,8 @@
 DEPENDENCIES
+  gpg
+    git: https://github.com/sous-chefs/gpg
+    revision: 2f682a1406047e99351d184fe18fff035a0c856c
+    ref: 2f682a1
   jrb_workstation
     path: cookbooks/jrb_workstation
 
@@ -10,6 +14,7 @@ GRAPH
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
   gpg (0.3.0)
+    yum-epel (>= 0.0.0)
   homebrew (5.0.8)
   jrb_workstation (3.10.0)
     homebrew (~> 5.0)
@@ -26,3 +31,4 @@ GRAPH
     gpg (~> 0.3)
   vagrant (2.0.1)
   windows (7.0.0)
+  yum-epel (3.3.0)
