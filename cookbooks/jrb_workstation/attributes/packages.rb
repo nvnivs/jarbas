@@ -2,7 +2,6 @@
 default['jrb_workstation']['packages']['upgrade'] = [
   'autossh',         # Automatically restart SSH sessions and tunnels
   'iftop',           # Display bandwidth usage on an interface
-  'iotop',           # View I/O usage of processes
   'openssh',
   'openssl',
   'pass',            # Password manager
@@ -21,4 +20,5 @@ default['jrb_workstation']['packages']['install'] = [
 # List of arch only packages
 default['jrb_workstation']['packages']['arch'] = [
   'alsa-utils',       # An alternative implementation of Linux sound support
+  'iotop',            # View I/O usage of processes
 ]
