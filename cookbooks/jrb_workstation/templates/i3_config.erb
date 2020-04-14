@@ -20,12 +20,12 @@ client.urgent           #2f343a #560000 #ffffff #560000 #111111
 client.background       #ffffff
 
 # System
-set $mode_system System (l)ock, (e)xit, (r)eboot, (s)hutdown
+set $mode_system System (l)ock, (e)xit
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    # bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    # bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

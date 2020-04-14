@@ -16,7 +16,7 @@ GRAPH
   gpg (0.3.0)
     yum-epel (>= 0.0.0)
   homebrew (5.0.8)
-  jrb_workstation (3.10.2)
+  jrb_workstation (3.11.0)
     homebrew (~> 5.0)
     macos (~> 3.2)
     terraform (~> 2.0)
