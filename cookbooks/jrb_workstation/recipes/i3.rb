@@ -10,6 +10,11 @@ user = node['jrb_workstation']['user']
 # i3 window manager
 package 'i3-wm'
 
+directory "#{home}/.config/i3" do
+  owner user
+  mode  '0755'
+end
+
 template "#{home}/.config/i3/config" do
   source 'i3_config.erb'
   owner  user
@@ -19,7 +24,7 @@ end
 # i3 status
 package 'i3status'
 
-directory "#{home}/.config/i3status/" do
+directory "#{home}/.config/i3status" do
   owner user
   mode  '0755'
 end
