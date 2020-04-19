@@ -20,5 +20,6 @@ default['jrb_workstation']['packages']['install'] = [
 # List of arch only packages
 default['jrb_workstation']['packages']['arch'] = [
   'alsa-utils',       # An alternative implementation of Linux sound support
+  'pulseaudio',       # Proxy for sound hardware
   'iotop',            # View I/O usage of processes
 ]
