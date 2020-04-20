@@ -21,20 +21,6 @@ default['jrb_workstation']['brew']['casks_blacklist'] = [
   'caffeine',
 ]
 
-default['jrb_workstation']['brew']['packages'] = [
-  'coreutils',       # GNU File, Shell, and Text utilities
-  'golang',          # Open source programming language to build simple/reliable/efficient software
-  'gptfdisk',        # Text-mode partitioning tools
-  'jq',              # Lightweight and flexible command-line JSON processor
-  'lynx',            # Text-based web browser
-  'pandoc',          # Swiss-army knife of markup format conversion
-  'portaudio',       # Required for libspotify
-  'qemu',            # x86 and PowerPC Emulator
-  'telnet',          # User interface to the TELNET protocol (built from macOS Sierra sources)
-  'watch',           # Executes a program periodically, showing output fullscreen
-  'yamllint',        # Linter for YAML files
-]
-
 default['jrb_workstation']['brew']['taps'] = [
   'caskroom/cask',
   'caskroom/versions',

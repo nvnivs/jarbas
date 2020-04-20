@@ -26,4 +26,10 @@ node['jrb_workstation']['packages']['arch'].each do |p|
   end
 end
 
-
+# Homebrew packages, mac_os_x only
+node['jrb_workstation']['packages']['homebrew'].each do |p|
+  homebrew_package p do
+    action :upgrade
+    only_if { node['platform'] == 'mac_os_x' }
+  end
+end

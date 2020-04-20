@@ -5,6 +5,7 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 command_line_tools 'install command line tools'
+include_recipe 'homebrew::default'
 
 execute 'kill_dock' do
   command 'killall Dock'
