@@ -39,3 +39,30 @@ default['jrb_workstation']['packages']['homebrew'] = [
   'watch',           # Executes a program periodically, showing output fullscreen
   'yamllint',        # Linter for YAML files
 ]
+
+# Homebrew taps for mac_os_x
+default['jrb_workstation']['packages']['homebrew_taps'] = [
+  'caskroom/cask',
+  'caskroom/versions',
+  'chef/chef',
+]
+
+# Homebrew casks for mac_os_x
+# Available casks at https://github.com/Homebrew/homebrew-cask/tree/master/Casks
+default['jrb_workstation']['packages']['homebrew_casks'] = [
+  'android-file-transfer',         # Android File Transfer
+  'chef/chef/chefdk',
+  'cyberduck',                     # FTP client
+  'docker',                        # NOTE: need to open with `open /Applications/Docker.app` to authorize
+  'caskroom/versions/firefox-developer-edition',
+  'google-chrome',
+  'gpg-suite', # encrypt, decrypt, sign and verify files or messages
+  'java', # Java Standard Edition Development Kit
+  'microsoft-remote-desktop-beta',
+  'mysql-shell',
+  'p4v', # Perforce SHASUM failures
+  'rectangle', # Rectangle is a window management app based on Spectacle, written in Swift.
+  'slack',
+  'spotify',
+  'virtualbox',
+]

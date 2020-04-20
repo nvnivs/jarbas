@@ -33,3 +33,27 @@ node['jrb_workstation']['packages']['homebrew'].each do |p|
     only_if { node['platform'] == 'mac_os_x' }
   end
 end
+
+# Homebrew taps, mac_os_x only
+node['jrb_workstation']['packages']['homebrew_taps'].each do |tap|
+  homebrew_tap tap do
+    only_if { node['platform'] == 'mac_os_x' }
+  end
+end
+
+# Install cask, mac_os_x only
+casks = node['jrb_workstation']['packages']['homebrew_casks']
+casks.each do |c|
+  homebrew_cask c do
+    only_if { node['platform'] == 'mac_os_x' }
+  end
+end
+
+# Update outdated casks, mac_os_x only
+outdated_casks do |cask|
+  jrb_workstation_execute "brew_cask_upgrade[#{cask}]" do
+    command "brew cask upgrade #{cask}"
+    only_if { casks.include? cask }
+    only_if { node['platform'] == 'mac_os_x' }
+  end
+end
