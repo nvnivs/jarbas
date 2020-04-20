@@ -24,14 +24,17 @@ node['jrb_workstation']['packages']['install'].each do |p|
   package p
 end
 
-# Arch only packages
-# Targets packages that are not suported on brew
+# Arch only packages, targets packages that are not suported on brew
 node['jrb_workstation']['packages']['arch'].each do |p|
   package p do
     action  :upgrade
     only_if { node['platform'] == 'arch' }
   end
 end
+
+# AUR packages for arch only
+#TODO: Need a resource to install packages from AUR
+# * Trizen cant be run as root and requires the user to enter a password so doesn't support non-interactive installs
 
 # Homebrew packages, mac_os_x only
 node['jrb_workstation']['packages']['homebrew'].each do |p|

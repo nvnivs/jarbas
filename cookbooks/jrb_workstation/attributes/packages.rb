@@ -24,6 +24,12 @@ default['jrb_workstation']['packages']['arch'] = [
   'iotop',            # View I/O usage of processes
 ]
 
+# List of arch only AUR packages
+default['jrb_workstation']['packages']['aur'] = [
+  'ytop',            # A TUI system monitor written in Rust
+]
+
+
 # Homebrew packages for mac_ox_x
 default['jrb_workstation']['packages']['homebrew'] = [
   'coreutils',       # GNU File, Shell, and Text utilities
