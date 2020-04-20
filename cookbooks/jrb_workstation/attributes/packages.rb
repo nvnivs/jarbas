@@ -7,7 +7,8 @@ default['jrb_workstation']['packages']['upgrade'] = [
   'pass',            # Password manager
   'tree',            # Display directories as trees (with optional color/HTML output)
   'unzip',
-  'zip'
+  'zip',
+  'ytop',            # A TUI system monitor written in Rust
 ]
 
 # List of default packages to install (no upgrade support)
@@ -45,23 +46,24 @@ default['jrb_workstation']['packages']['homebrew_taps'] = [
   'caskroom/cask',
   'caskroom/versions',
   'chef/chef',
+  'cjbassi/ytop',
 ]
 
 # Homebrew casks for mac_os_x
 # Available casks at https://github.com/Homebrew/homebrew-cask/tree/master/Casks
 default['jrb_workstation']['packages']['homebrew_casks'] = [
-  'android-file-transfer',         # Android File Transfer
+  'android-file-transfer',          # Android File Transfer
   'chef/chef/chefdk',
-  'cyberduck',                     # FTP client
-  'docker',                        # NOTE: need to open with `open /Applications/Docker.app` to authorize
+  'cyberduck',                      # FTP client
+  'docker',                         # NOTE: need to open with `open /Applications/Docker.app` to authorize
   'caskroom/versions/firefox-developer-edition',
   'google-chrome',
-  'gpg-suite', # encrypt, decrypt, sign and verify files or messages
-  'java', # Java Standard Edition Development Kit
+  'gpg-suite',                      # encrypt, decrypt, sign and verify files or messages
+  'java',                           # Java Standard Edition Development Kit
   'microsoft-remote-desktop-beta',
   'mysql-shell',
-  'p4v', # Perforce SHASUM failures
-  'rectangle', # Rectangle is a window management app based on Spectacle, written in Swift.
+  'p4v',                            # Perforce SHASUM failures
+  'rectangle',                      # Rectangle is a window management app based on Spectacle, written in Swift.
   'slack',
   'spotify',
   'virtualbox',

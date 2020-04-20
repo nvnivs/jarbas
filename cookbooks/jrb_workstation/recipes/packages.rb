@@ -4,6 +4,13 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
+# Homebrew taps, mac_os_x only
+node['jrb_workstation']['packages']['homebrew_taps'].each do |tap|
+  homebrew_tap tap do
+    only_if { node['platform'] == 'mac_os_x' }
+  end
+end
+
 # Packages to install or upgrade
 node['jrb_workstation']['packages']['upgrade'].each do |p|
   package p do
@@ -30,13 +37,6 @@ end
 node['jrb_workstation']['packages']['homebrew'].each do |p|
   homebrew_package p do
     action :upgrade
-    only_if { node['platform'] == 'mac_os_x' }
-  end
-end
-
-# Homebrew taps, mac_os_x only
-node['jrb_workstation']['packages']['homebrew_taps'].each do |tap|
-  homebrew_tap tap do
     only_if { node['platform'] == 'mac_os_x' }
   end
 end
