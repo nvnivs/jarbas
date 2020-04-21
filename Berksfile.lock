@@ -1,12 +1,17 @@
 DEPENDENCIES
   jrb_workstation
     path: cookbooks/jrb_workstation
+  pacman
+    git: https://github.com/z0c/pacman
+    revision: aabaa917fc62174449178a4e99b4c9471901f6e0
 
 GRAPH
   homebrew (5.0.8)
   jrb_workstation (3.15.2)
     homebrew (~> 5.0)
     macos (~> 3.2)
+    pacman (~> 1.1)
     vagrant (~> 2.0)
   macos (3.2.1)
+  pacman (1.2.0)
   vagrant (2.0.1)
