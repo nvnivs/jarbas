@@ -4,6 +4,16 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
+# AUR packages for arch only
+#TODO: Need a resource to install packages from AUR
+# * Trizen cant be run as root and requires the user to enter a password so doesn't support non-interactive installs
+node['jrb_workstation']['packages']['aur'].each do |p|
+  pacman_aur p do
+    action  [ :build, :install ]
+    only_if { node['platform'] == 'arch' }
+  end
+end
+
 # Homebrew taps, mac_os_x only
 node['jrb_workstation']['packages']['homebrew_taps'].each do |tap|
   homebrew_tap tap do
@@ -31,10 +41,6 @@ node['jrb_workstation']['packages']['arch'].each do |p|
     only_if { node['platform'] == 'arch' }
   end
 end
-
-# AUR packages for arch only
-#TODO: Need a resource to install packages from AUR
-# * Trizen cant be run as root and requires the user to enter a password so doesn't support non-interactive installs
 
 # Homebrew packages, mac_os_x only
 node['jrb_workstation']['packages']['homebrew'].each do |p|
