@@ -6,7 +6,7 @@ DEPENDENCIES
 
 GRAPH
   homebrew (5.0.8)
-  jrb_workstation (3.12.0)
+  jrb_workstation (3.13.0)
     homebrew (~> 5.0)
     macos (~> 3.2)
     pacman (~> 1.2)
