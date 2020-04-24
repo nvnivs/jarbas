@@ -15,6 +15,7 @@ include_recipe 'jrb_workstation::powerline_fonts'
 include_recipe 'jrb_workstation::vim'
 include_recipe 'jrb_workstation::git'
 include_recipe 'jrb_workstation::ranger'
+include_recipe 'jrb_workstation::pfetch'
 
 # Packages
 include_recipe 'jrb_workstation::packages'
