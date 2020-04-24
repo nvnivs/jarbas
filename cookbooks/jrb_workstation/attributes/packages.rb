@@ -26,7 +26,7 @@ default['jrb_workstation']['packages']['arch'] = [
 
 # List of arch only AUR packages
 default['jrb_workstation']['packages']['aur'] = [
-#  'ytop',            # A TUI system monitor written in Rust
+  'ytop',            # A TUI system monitor written in Rust
 ]
 
 
