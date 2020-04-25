@@ -6,8 +6,8 @@ set -e
 recipe=${1:-default}
 
 # Get ready
-runlist="recipe[jrb_workstation::osx_sudoers_nopass],recipe[jrb_workstation::${recipe}],recipe[jrb_workstation::osx_sudoers]"
-json='{"jrb_workstation":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
+runlist="recipe[jarbas::osx_sudoers_nopass],recipe[jarbas::${recipe}],recipe[jarbas::osx_sudoers]"
+json='{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
 sudo -v
 pushd $(dirname $(dirname $(realpath $0)))
 
