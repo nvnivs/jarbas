@@ -1,0 +1,39 @@
+#
+# Cookbook:: jarbas
+# Recipe:: default
+#
+# Copyright:: 2019, The Authors, All Rights Reserved.
+
+# OS configuration
+include_recipe 'jarbas::arch' if node['platform'] == 'arch'
+include_recipe 'jarbas::mac_os_x' if node['platform'] == 'mac_os_x'
+
+# Command line
+include_recipe 'jarbas::zsh'
+include_recipe 'jarbas::bash_profile'
+include_recipe 'jarbas::powerline_fonts'
+include_recipe 'jarbas::vim'
+include_recipe 'jarbas::git'
+include_recipe 'jarbas::ranger'
+include_recipe 'jarbas::pfetch'
+
+# Packages
+include_recipe 'jarbas::packages'
+include_recipe 'jarbas::ruby'
+include_recipe 'jarbas::python'
+include_recipe 'jarbas::aws'
+include_recipe 'jarbas::terraform'
+include_recipe 'jarbas::vagrant' if node['platform'] == 'mac_os_x'
+include_recipe 'jarbas::vscode' if node['platform'] == 'mac_os_x'
+include_recipe 'jarbas::kubernetes' if node['platfrom'] == 'mac_os_x'
+
+# Terminal
+include_recipe 'jarbas::termite' if node['platform'] == 'arch'
+include_recipe 'jarbas::iterm' if node['platform'] == 'mac_os_x'
+
+# Brwoser
+include_recipe 'jarbas::qutebrowser' if node['platform'] == 'arch'
+
+# Window manager
+include_recipe 'jarbas::xorg' if node['platform'] == 'arch'
+include_recipe 'jarbas::i3' if node['platform'] == 'arch'
