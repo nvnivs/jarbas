@@ -4,7 +4,7 @@ DEPENDENCIES
 
 GRAPH
   homebrew (5.0.8)
-  jarbas (4.0.0)
+  jarbas (4.1.0)
     homebrew (~> 5.0)
     macos (~> 3.2)
     vagrant (~> 2.0)
