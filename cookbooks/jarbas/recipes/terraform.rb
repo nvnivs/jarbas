@@ -27,3 +27,7 @@ file '/var/lib/tfenv/version' do
   group   'tfenv'
   mode    0664
 end
+
+jarbas_aur 'terragrunt' do
+  action [ :build, :install ]
+end

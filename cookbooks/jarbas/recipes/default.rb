@@ -21,9 +21,10 @@ include_recipe 'jarbas::pfetch'
 include_recipe 'jarbas::packages'
 include_recipe 'jarbas::ruby'
 include_recipe 'jarbas::python'
+include_recipe 'jarbas::node'
+include_recipe 'jarbas::go'
 include_recipe 'jarbas::aws'
 include_recipe 'jarbas::terraform'
-include_recipe 'jarbas::node'
 include_recipe 'jarbas::heroku'
 include_recipe 'jarbas::vagrant' if node['platform'] == 'mac_os_x'
 include_recipe 'jarbas::vscode' if node['platform'] == 'mac_os_x'
@@ -33,8 +34,8 @@ include_recipe 'jarbas::kubernetes' if node['platfrom'] == 'mac_os_x'
 include_recipe 'jarbas::termite' if node['platform'] == 'arch'
 include_recipe 'jarbas::iterm' if node['platform'] == 'mac_os_x'
 
-# Brwoser
-include_recipe 'jarbas::qutebrowser' if node['platform'] == 'arch'
+# Browser
+include_recipe 'jarbas::qutebrowser'
 
 # Window manager
 include_recipe 'jarbas::xorg' if node['platform'] == 'arch'
