@@ -26,9 +26,9 @@ include_recipe 'jarbas::go'
 include_recipe 'jarbas::aws'
 include_recipe 'jarbas::terraform'
 include_recipe 'jarbas::heroku'
+include_recipe 'jarbas::docker' if node['platfrom'] == 'mac_os_x'
 include_recipe 'jarbas::vagrant' if node['platform'] == 'mac_os_x'
 include_recipe 'jarbas::vscode' if node['platform'] == 'mac_os_x'
-include_recipe 'jarbas::kubernetes' if node['platfrom'] == 'mac_os_x'
 
 # Terminal
 include_recipe 'jarbas::termite' if node['platform'] == 'arch'
