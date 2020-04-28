@@ -38,10 +38,9 @@ end
 
 node['jarbas']['ruby']['gems'].each do |g|
   jarbas_execute "install_gem[#{g}]" do
-    command           "gem install #{g}"
-    not_if            "gem list | grep -E '#{g}'",
-                      :user => user,
-                      :environment => { 'HOME' => node['jarbas']['home']}
-
+    command "gem install #{g}"
+    not_if  "gem list | grep -E '#{g}'",
+            :user => user,
+            :environment => { 'HOME' => node['jarbas']['home']}
   end
 end
