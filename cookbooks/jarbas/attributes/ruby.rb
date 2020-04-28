@@ -5,6 +5,7 @@ default['jarbas']['ruby']['rubies'] = [
 ]
 
 default['jarbas']['ruby']['gems'] = [
+  'bundler',
   'encrypt_data_bag',
   'knife-opc',
   'vimgolf',
