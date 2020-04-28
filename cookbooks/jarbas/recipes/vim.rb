@@ -20,7 +20,6 @@ directory "#{node['jarbas']['home']}/.vim/autoload" do
   owner     user
 end
 
-
 remote_file "#{node['jarbas']['home']}/.vim/autoload/plug.vim" do
   source    'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   notifies  :run, 'jarbas_execute[vim_plug_upgrade]', :immediately

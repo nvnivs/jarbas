@@ -4,6 +4,8 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
+include_recipe 'jarbas::git'
+
 package 'zsh' do
   action :upgrade
 end

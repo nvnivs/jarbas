@@ -4,6 +4,8 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
+include_recipe 'jarbas::xorg'
+
 home = node['jarbas']['home']
 user = node['jarbas']['user']
 

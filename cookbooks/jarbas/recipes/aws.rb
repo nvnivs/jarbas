@@ -4,6 +4,8 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
+include_recipe 'jarbas::python'
+
 package 'aws-cli' do
   not_if { node['platform'] == 'mac_os_x' }
 end
