@@ -53,6 +53,11 @@ default['jarbas']['packages']['homebrew_taps'] = [
   'caskroom/versions',
   'chef/chef',
   'cjbassi/ytop',
+  'heroku/brew',
+]
+
+default['jarbas']['packages']['homebrew_untap'] = [
+  'heroku/heroku',
 ]
 
 # Homebrew casks for mac_os_x

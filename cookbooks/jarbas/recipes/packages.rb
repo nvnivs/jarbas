@@ -11,6 +11,13 @@ node['jarbas']['packages']['homebrew_taps'].each do |tap|
   end
 end
 
+node['jarbas']['packages']['homebrew_untap'].each do |tap|
+  homebrew_tap tap do
+    action  :untap
+    only_if { node['platform'] == 'mac_os_x' }
+  end
+end
+
 # Packages to install or upgrade
 node['jarbas']['packages']['upgrade'].each do |p|
   package p do
