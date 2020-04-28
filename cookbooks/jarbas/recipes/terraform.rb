@@ -39,7 +39,7 @@ file 'version' do
           when 'mac_os_x'
             '/usr/local/Cellar/tfenv/1.0.2/version'
           else
-            '/var/lib/fenv/version'
+            '/var/lib/tfenv/version'
           end
 end
 
