@@ -11,11 +11,6 @@ json='{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
 sudo -v
 pushd $(dirname $(dirname $(realpath $0)))
 
-# Berks update
-if [ -f Berksfile.lock ]; then rm -rf Berksfile.lock; fi
-berks install
-berks vendor
-
 # Run chef
 echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin --chef-license accept
 
