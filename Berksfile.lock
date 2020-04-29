@@ -3,8 +3,10 @@ DEPENDENCIES
     path: cookbooks/jarbas
 
 GRAPH
+  chef_client_updater (3.9.0)
   homebrew (5.0.8)
-  jarbas (4.5.0)
+  jarbas (4.6.0)
+    chef_client_updater (~> 3.9)
     homebrew (~> 5.0)
     macos (~> 3.2)
     vagrant (~> 2.0)
