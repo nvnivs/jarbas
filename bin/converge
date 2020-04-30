@@ -11,6 +11,11 @@ json='{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
 sudo -v
 pushd $(dirname $(dirname $(realpath $0)))
 
+# Chef if update is required
+if [ ! -d berks-cookbook ]; then
+    bin/update
+fi
+
 # Run chef
 echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin --chef-license accept
 
