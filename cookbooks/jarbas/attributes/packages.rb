@@ -20,8 +20,9 @@ default['jarbas']['packages']['install'] = [
 # List of arch only packages
 default['jarbas']['packages']['arch'] = [
   'alsa-utils',       # An alternative implementation of Linux sound support
-  'pulseaudio',       # Proxy for sound hardware
   'iotop',            # View I/O usage of processes
+  'lynx',             # TUI web browser
+  'pulseaudio',       # Proxy for sound hardware
 ]
 
 # List of arch only AUR packages
