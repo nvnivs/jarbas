@@ -12,7 +12,7 @@ sudo -v
 pushd $(dirname $(dirname $(realpath $0)))
 
 # Chef if update is required
-if [ ! -d berks-cookbook ]; then
+if [ ! -d berks-cookbooks ]; then
     bin/update
 fi
 
