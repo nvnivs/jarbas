@@ -5,7 +5,7 @@ DEPENDENCIES
 GRAPH
   chef_client_updater (3.9.0)
   homebrew (5.0.8)
-  jarbas (4.7.0)
+  jarbas (4.7.1)
     chef_client_updater (~> 3.9)
     homebrew (~> 5.0)
     macos (~> 3.2)

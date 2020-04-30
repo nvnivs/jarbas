@@ -41,4 +41,6 @@ include_recipe 'jarbas::xorg' if node['platform'] == 'arch'
 include_recipe 'jarbas::i3' if node['platform'] == 'arch'
 
 # Chef
-include_recipe 'jarbas::chef'
+#TODO: Failing on arch with the following exception
+#FATAL: Mixlib::Install::Options::InvalidOptions: chef_client_updater[Install latest] (jarbas::chef line 1) had an error: Mixlib::Install::Options::InvalidOptions: Unknown architecture determine.
+include_recipe 'jarbas::chef' if node['platform'] != 'arch'
