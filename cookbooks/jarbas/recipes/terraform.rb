@@ -50,7 +50,6 @@ jarbas_aur 'terragrunt' do
 end
 
 homebrew_package 'terragrunt' do
-  action  :upgrade
   options '--ignore-dependencies'
   only_if { node['platform'] == 'mac_os_x' }
 end
