@@ -13,6 +13,11 @@ package 'kubernetes-cli' do
   action :upgrade
 end
 
+# Stern makes Kubernetes log watching easier
+package 'stern' do
+  action :upgrade
+end
+
 package 'kubernetes-helm' do
   version 'v2.12.2'
 end

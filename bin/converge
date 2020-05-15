@@ -5,6 +5,11 @@ set -e
 # Parameters
 recipe=${1:-default}
 
+# Install cinc
+if ! [ -x ""$(command -v cinc-client)"" ]; then
+    curl -L https://omnitruck.cinc.sh/install.sh | sudo bash -s -- -v 16
+fi
+
 # Get ready
 runlist="recipe[jarbas::osx_sudoers_nopass],recipe[jarbas::${recipe}],recipe[jarbas::osx_sudoers]"
 json='{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
@@ -17,7 +22,7 @@ if [ ! -d berks-cookbooks ]; then
 fi
 
 # Run chef
-echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin --chef-license accept
+echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin -c .chef/client.rb
 
 # Tidy up
 popd
