@@ -18,8 +18,8 @@ package 'stern' do
   action :upgrade
 end
 
-package 'kubernetes-helm' do
-  version 'v2.12.2'
+package 'helm' do
+  action :upgrade
 end
 
 package 'aws-iam-authenticator' do

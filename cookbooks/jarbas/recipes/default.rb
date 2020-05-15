@@ -25,8 +25,7 @@ include_recipe 'jarbas::node'
 include_recipe 'jarbas::aws'
 include_recipe 'jarbas::terraform'
 include_recipe 'jarbas::heroku'
-#TODO: docker recipe is broken in all platforms
-#include_recipe 'jarbas::docker' if node['platform'] == 'mac_os_x'
+include_recipe 'jarbas::docker' if node['platform'] == 'mac_os_x'
 include_recipe 'jarbas::vagrant' if node['platform'] == 'mac_os_x'
 include_recipe 'jarbas::vscode' if node['platform'] == 'mac_os_x'
 
