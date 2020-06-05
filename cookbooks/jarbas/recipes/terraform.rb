@@ -37,7 +37,7 @@ file 'version' do
   mode    0664
   path    case node['platform']
           when 'mac_os_x'
-            '/usr/local/Cellar/tfenv/1.0.2/version'
+            '/usr/local/Cellar/tfenv/2.0.0/version'
           else
             '/var/lib/tfenv/version'
           end
