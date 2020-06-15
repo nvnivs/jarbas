@@ -1,10 +1,10 @@
 default['jarbas']['vscode']['extensions'] = [
   'castwide.solargraph',
-  'mauve.terraform',
+  'hashicorp.terraform',
   'ms-azuretools.vscode-docker',
   'ms-kubernetes-tools.vscode-kubernetes-tools',
   'ms-python.python',
-  'ms-vscode.Go',
+  'golang.Go',
   'rebornix.ruby',
   'redhat.vscode-yaml',
 ]
