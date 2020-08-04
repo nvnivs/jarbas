@@ -53,3 +53,9 @@ homebrew_package 'terragrunt' do
   options '--ignore-dependencies'
   only_if { node['platform'] == 'mac_os_x' }
 end
+
+# Plugins
+jarbas_execute 'terraform_plugin[godaddy]' do
+  command 'curl -s https://raw.githubusercontent.com/n3integration/terraform-godaddy/master/install.sh |bash -'
+  not_if  { ::File.exist?("#{node['jarbas']['home']}/.terraform/plugins/terraform-godaddy")}
+end
