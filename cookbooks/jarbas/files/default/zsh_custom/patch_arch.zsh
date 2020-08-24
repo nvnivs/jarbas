@@ -19,7 +19,9 @@ function patch_arch {
   if [ ! "${FIND}" = "" ]; then
     CURRENT_KERNEL=`uname -r`
     if [ ! "${CURRENT_KERNEL}" = "${FIND}" ]; then
-      echo "!!! Kernel has been patched, a reboot is required !!!"
+      echo "Kernel has been patched, rebooting in 5..."
+      sleep 5
+      sudo reboot now
     fi
   fi
 }
