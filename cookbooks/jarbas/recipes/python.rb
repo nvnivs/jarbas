@@ -16,3 +16,8 @@ jarbas_execute 'install-pip' do
   not_if  'which pip'
   only_if { node['platform'] == 'mac_os_x' }
 end
+
+jarbas_execute 'install-speedtest-cli' do
+  command 'pip install speedtest-cli'
+  not_if  'which speedtest-cli'
+end
