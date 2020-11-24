@@ -1,6 +1,7 @@
-default['jarbas']['ruby']['default_version'] = 'ruby-2.6.5'
+default['jarbas']['ruby']['default_version'] = 'ruby-2.7.1'
 
 default['jarbas']['ruby']['rubies'] = [
+  'ruby-2.7.1',
   'ruby-2.6.6'
 ]
 
