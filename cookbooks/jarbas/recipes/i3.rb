@@ -23,6 +23,11 @@ template "#{home}/.config/i3/config" do
   mode   '0644'
 end
 
+directory "#{home}/.i3" do
+  owner user
+  mode  '0755'
+end
+
 # i3 status
 package 'i3status'
 
