@@ -41,6 +41,9 @@ include_recipe 'jarbas::qutebrowser'
 include_recipe 'jarbas::xorg' if node['platform'] == 'arch'
 include_recipe 'jarbas::i3' if node['platform'] == 'arch'
 
+# Tools
+include_recipe 'jarbas::teamviewer'
+
 # Chef
 #TODO: Failing on arch with the following exception
 #TODO: Not working on mac_os_x with cinc

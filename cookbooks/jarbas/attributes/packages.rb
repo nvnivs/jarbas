@@ -24,6 +24,9 @@ default['jarbas']['packages']['arch'] = [
   'lynx',             # TUI web browser
   'ntp',              # Software clock syncronizer
   'pulseaudio',       # Proxy for sound hardware
+  'qt5-webkit',
+  'qt5-x11extras',
+  'qt5-quickcontrols',
 ]
 
 # List of arch only AUR packages
