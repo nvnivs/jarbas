@@ -22,7 +22,7 @@ if [ ! -d berks-cookbooks ]; then
 fi
 
 # Run chef
-echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin -c .chef/client.rb
+echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin -c .chef/client.rb --chef-license accept
 
 # Tidy up
 popd
