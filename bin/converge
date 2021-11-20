@@ -5,14 +5,15 @@ set -e
 # Parameters
 recipe=${1:-default}
 
-# Install cinc
-#if ! [ -x ""$(command -v cinc-client)"" ]; then
-#    curl -L https://omnitruck.cinc.sh/install.sh | sudo bash -s -- -v 16
-#fi
-
 # Get ready
 runlist="recipe[jarbas::osx_sudoers_nopass],recipe[jarbas::${recipe}],recipe[jarbas::osx_sudoers]"
 json='{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
+
+# Use local settings if found
+if [ -f ~/jarbas_node_data.json ]; then
+    json=$(cat ~/jarbas_node_data.json)
+fi
+
 sudo -v
 pushd $(dirname $(dirname $(realpath $0)))
 
