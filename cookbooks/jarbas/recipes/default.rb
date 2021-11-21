@@ -8,10 +8,12 @@
 include_recipe 'jarbas::arch' if node['platform'] == 'arch'
 include_recipe 'jarbas::mac_os_x' if node['platform'] == 'mac_os_x'
 
-# Command line
 include_recipe 'jarbas::git'
 include_recipe 'jarbas::zsh'
-include_recipe 'jarbas::bash_profile'
+include_recipe 'jarbas::bash'
+include_recipe 'jarbas::vscode'
+
+# Old ordering
 include_recipe 'jarbas::powerline_fonts'
 include_recipe 'jarbas::vim'
 include_recipe 'jarbas::ranger'
@@ -28,7 +30,7 @@ include_recipe 'jarbas::terraform'
 include_recipe 'jarbas::heroku'
 include_recipe 'jarbas::docker'
 include_recipe 'jarbas::vagrant' if node['platform'] == 'mac_os_x'
-include_recipe 'jarbas::vscode' if node['platform'] == 'mac_os_x'
+
 
 # Terminal
 include_recipe 'jarbas::termite' if node['platform'] == 'arch'
