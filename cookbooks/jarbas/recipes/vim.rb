@@ -6,7 +6,7 @@
 
 user = node['jarbas']['user']
 
-package 'vim' do
+jarbas_package 'vim' do
   action :upgrade
 end
 
