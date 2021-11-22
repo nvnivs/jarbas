@@ -17,7 +17,6 @@ include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
 
-include_recipe 'jarbas::node'
 include_recipe 'jarbas::go'
 include_recipe 'jarbas::aws'
 include_recipe 'jarbas::terraform'

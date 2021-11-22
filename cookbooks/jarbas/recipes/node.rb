@@ -1,2 +1,2 @@
-package 'nodejs'
-package 'npm'
+jarbas_package 'nodejs'
+jarbas_package 'npm'
