@@ -17,9 +17,6 @@ include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
 
-# Browser
-include_recipe 'jarbas::qutebrowser'
-
 # Window manager
 include_recipe 'jarbas::xorg' if node['platform'] == 'arch'
 include_recipe 'jarbas::i3' if node['platform'] == 'arch'

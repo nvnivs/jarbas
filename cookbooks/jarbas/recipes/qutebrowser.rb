@@ -4,7 +4,7 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
-package 'qutebrowser' do
+jarbas_package 'qutebrowser' do
   not_if { node['platform'] == 'mac_os_x' }
 end
 
