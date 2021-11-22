@@ -7,3 +7,7 @@
 jarbas_yay_package 'brave-bin' do
     not_if [ node['platform'] == 'mac_os_x' ]
 end
+
+#TODO: Install extensions programatically
+# Bitwarden
+# Translate
