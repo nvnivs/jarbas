@@ -11,11 +11,11 @@ include_recipe 'jarbas::platform_mac_os_x' if node['platform'] == 'mac_os_x'
 include_recipe 'jarbas::git'
 include_recipe 'jarbas::zsh'
 include_recipe 'jarbas::bash'
+include_recipe 'jarbas::vim'
 include_recipe 'jarbas::vscode'
 
 # Old ordering
 include_recipe 'jarbas::powerline_fonts'
-include_recipe 'jarbas::vim'
 include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::pfetch'
 

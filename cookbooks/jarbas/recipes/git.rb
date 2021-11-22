@@ -4,14 +4,7 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
-#TODO: Package resource does not support Manjaro provider
-package 'git' do
-  not_if { node['platform'] == 'manjaro' }
-end
-
-pacman_package 'git' do
-  only_if { node['platform'] == 'manjaro' }
-end
+jarbas_package 'git'
 
 #TODO: git cookbook does not support Manjaro
 #TODO: Add guards

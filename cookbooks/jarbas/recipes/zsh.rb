@@ -7,17 +7,7 @@
 include_recipe 'jarbas::git'
 
 
-#TODO: Package resource does not support Manjaro provider
-package 'zsh' do
-  action :upgrade
-  not_if { node['platform'] == 'manjaro' }
-end
-
-pacman_package 'zsh' do
-  action  :upgrade
-  only_if { node['platform'] == 'manjaro' }
-end
-
+jarbas_package 'zsh'
 
 git "#{node['jarbas']['home']}/.oh-my-zsh" do
   repository 'https://github.com/robbyrussell/oh-my-zsh.git'
