@@ -16,9 +16,3 @@ include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
-
-# Chef
-#TODO: Failing on arch with the following exception
-#TODO: Not working on mac_os_x with cinc
-#FATAL: Mixlib::Install::Options::InvalidOptions: chef_client_updater[Install latest] (jarbas::chef line 1) had an error: Mixlib::Install::Options::InvalidOptions: Unknown architecture determine.
-#include_recipe 'jarbas::chef' if node['platform'] != 'arch'
