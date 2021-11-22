@@ -7,7 +7,7 @@
 home = node['jarbas']['home']
 user = node['jarbas']['user']
 
-package 'termite'
+jarbas_package 'termite'
 
 directory "#{home}/.config/termite/" do
   owner user
