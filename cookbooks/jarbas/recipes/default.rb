@@ -17,7 +17,6 @@ include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
 
-include_recipe 'jarbas::docker'
 include_recipe 'jarbas::vagrant' if node['platform'] == 'mac_os_x'
 
 

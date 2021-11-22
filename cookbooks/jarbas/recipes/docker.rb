@@ -4,47 +4,48 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-package 'docker' do
+# Docker
+jarbas_package 'docker' do
   action :upgrade
 end
 
-jarbas_aur 'kubectl-bin' do
-  action  [ :build, :install ]
-  only_if { node['platform'] == 'arch'}
+# Helm
+jarbas_package 'helm' do
+  action :upgrade
 end
 
 # Kubectl
+jarbas_yay_package 'kubectl-bin' do
+  not_if { node['platform'] == 'mac_os_x' }
+end
+
 package 'kubernetes-cli' do
   action  :upgrade
   only_if { node['platform'] == 'mac_os_x' }
 end
 
-# Stern makes Kubernetes log watching easier
-#TODO: No package available in arch, will need to build
+# Stern: Multi pod and container log tailing for Kubernetes
+jarbas_yay_package 'stern-bin' do
+  not_if { node['platform'] == 'mac_os_x' }
+end
+
 package 'stern' do
   action  :upgrade
   only_if { node['platform'] == 'mac_os_x' }
 end
 
-package 'helm' do
-  action :upgrade
+# AWS IAM Authenticator: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster
+jarbas_yay_package 'aws-iam-authenticator-bin' do
+  not_if { node['platform'] == 'mac_os_x' }
 end
-
-# AWS IAM Authenticator
-#TODO: Installation failing
-#jarbas_aur 'aws-iam-authenticator-git'  do
-#  action  [ :build, :install ]
-#  only_if { node['platform'] == 'arch'}
-#end
 
 package 'aws-iam-authenticator' do
   action  :upgrade
   only_if { node['platform'] == 'mac_os_x' }
 end
 
-package 'minikube' do
-  action :upgrade
-end
+# Minikube
+jarbas_package 'minikube'
 
 #TODO: this stuff is too much for the crap laptop
 #jarbas_execute 'minikube[cpus]' do
