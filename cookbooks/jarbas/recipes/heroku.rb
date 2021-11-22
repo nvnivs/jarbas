@@ -1,6 +1,5 @@
-jarbas_aur 'heroku-cli' do
-  action [ :build, :install ]
-  only_if { node['platform'] == 'arch'}
+jarbas_yay_package 'heroku-cli-bin' do
+  not_if { node['platform'] == 'mac_os_x' }
 end
 
 homebrew_package "heroku" do
