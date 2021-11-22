@@ -36,3 +36,5 @@ jarbas_execute 'vim_plug_clean_update' do
   command   'vim -esu ~/.vim/vimrc +PlugClean! +PlugUpdate +qa || true'
   action    :nothing
 end
+
+include_recipe 'jarbas::powerline_fonts'

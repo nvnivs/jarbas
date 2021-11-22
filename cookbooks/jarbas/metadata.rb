@@ -6,7 +6,7 @@ description 'Installs/Configures workstation'
 long_description 'Installs/Configures workstation'
 version '4.21.4'
 
-chef_version '>= 12.14' if respond_to?(:chef_version)
+chef_version '>= 15.14' if respond_to?(:chef_version)
 issues_url 'https://github.com/z0c/jarbas/issues'
 source_url 'https://github.com/z0c/jarbas'
 
@@ -17,3 +17,4 @@ depends 'vagrant',              '~> 2.0'
 
 supports 'arch'
 supports 'mac_os_x'
+supports 'manjaro'
