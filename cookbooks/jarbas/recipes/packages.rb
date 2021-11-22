@@ -20,7 +20,7 @@ end
 
 # Packages to install or upgrade
 node['jarbas']['packages']['upgrade'].each do |p|
-  package p do
+  jarbas_package p do
     action :upgrade
   end
 end
@@ -28,30 +28,22 @@ end
 # Packages to install only (no upgrade support)
 # Targets packages where brew fails on upgrade
 node['jarbas']['packages']['install'].each do |p|
-  package p
+  jarbas_package p
 end
 
 # Arch only packages, targets packages that are not suported on brew
 node['jarbas']['packages']['arch'].each do |p|
-  package p do
+  jarbas_package p do
     action  :upgrade
-    only_if { node['platform'] == 'arch' }
+    only_if { node['platform'] == 'arch' || node['platform'] == 'manjaro' }
   end
 end
 
 # AUR packages for arch only
 node['jarbas']['packages']['aur'].each do |p|
-  jarbas_aur p do
-    action  [ :build, :install ]
-    only_if { node['platform'] == 'arch' }
-  end
-end
-
-# AUR packages for arch only
-node['jarbas']['packages']['aur'].each do |p|
-  jarbas_aur p do
-    action  [ :build, :install ]
-    only_if { node['platform'] == 'arch' }
+  jarbas_yay_package p do
+    action  :install
+    only_if { node['platform'] == 'arch' || node['platform'] == 'manjaro' }
   end
 end
 

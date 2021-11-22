@@ -13,11 +13,11 @@ include_recipe 'jarbas::zsh'
 include_recipe 'jarbas::bash'
 include_recipe 'jarbas::vim'
 include_recipe 'jarbas::ranger'
+include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
 
 # Packages
-include_recipe 'jarbas::packages'
 include_recipe 'jarbas::ruby'
 include_recipe 'jarbas::python'
 include_recipe 'jarbas::node'

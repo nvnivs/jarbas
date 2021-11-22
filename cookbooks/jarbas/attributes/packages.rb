@@ -19,9 +19,7 @@ default['jarbas']['packages']['install'] = [
 
 # List of arch only packages
 default['jarbas']['packages']['arch'] = [
-  'alsa-utils',       # An alternative implementation of Linux sound support
   'iotop',            # View I/O usage of processes
-  'lynx',             # TUI web browser
   'ntp',              # Software clock syncronizer
   'pulseaudio',       # Proxy for sound hardware
   'qt5-webkit',
@@ -31,7 +29,6 @@ default['jarbas']['packages']['arch'] = [
 
 # List of arch only AUR packages
 default['jarbas']['packages']['aur'] = [
-  'ytop',            # A TUI system monitor written in Rust
 ]
 
 
