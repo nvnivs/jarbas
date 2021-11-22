@@ -5,8 +5,8 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 # OS configuration
-include_recipe 'jarbas::arch' if node['platform'] == 'arch'
-include_recipe 'jarbas::mac_os_x' if node['platform'] == 'mac_os_x'
+include_recipe 'jarbas::platform_arch' if node['platform'] == 'arch'
+include_recipe 'jarbas::platform_mac_os_x' if node['platform'] == 'mac_os_x'
 
 include_recipe 'jarbas::git'
 include_recipe 'jarbas::zsh'
