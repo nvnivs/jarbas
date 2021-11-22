@@ -6,7 +6,7 @@
 
 include_recipe 'jarbas::python'
 
-package 'aws-cli' do
+jarbas_package 'aws-cli' do
   not_if { node['platform'] == 'mac_os_x' }
 end
 

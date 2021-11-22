@@ -16,8 +16,8 @@ include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
-
 include_recipe 'jarbas::aws'
+
 include_recipe 'jarbas::terraform'
 include_recipe 'jarbas::heroku'
 include_recipe 'jarbas::docker'
