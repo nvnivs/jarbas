@@ -15,9 +15,6 @@ include_recipe 'jarbas::vim'
 include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::vscode'
 
-# Old ordering
-include_recipe 'jarbas::pfetch'
-
 # Packages
 include_recipe 'jarbas::packages'
 include_recipe 'jarbas::ruby'
