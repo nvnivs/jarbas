@@ -17,9 +17,6 @@ include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
 
-include_recipe 'jarbas::vagrant' if node['platform'] == 'mac_os_x'
-
-
 # Terminal
 include_recipe 'jarbas::termite' if node['platform'] == 'arch'
 include_recipe 'jarbas::iterm' if node['platform'] == 'mac_os_x'
