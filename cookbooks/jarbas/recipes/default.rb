@@ -12,10 +12,10 @@ include_recipe 'jarbas::git'
 include_recipe 'jarbas::zsh'
 include_recipe 'jarbas::bash'
 include_recipe 'jarbas::vim'
+include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::vscode'
 
 # Old ordering
-include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::pfetch'
 
 # Packages

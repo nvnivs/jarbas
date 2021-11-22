@@ -7,7 +7,7 @@
 home = node['jarbas']['home']
 user = node['jarbas']['user']
 
-package 'ranger'
+jarbas_package 'ranger'
 
 directory "#{home}/.config/ranger/" do
   owner user
@@ -15,7 +15,7 @@ directory "#{home}/.config/ranger/" do
 end
 
 template "#{home}/.config/ranger/rc.conf" do
-  source 'rc_conf.erb'
+  source 'ranger/rc_conf.erb'
   owner  user
   mode   '0644'
 end
