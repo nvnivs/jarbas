@@ -7,8 +7,8 @@
 rvm_path = "#{node['jarbas']['home']}/.rvm/scripts/rvm"
 user     = node['jarbas']['user']
 
-package 'ruby'
-package 'gnupg'
+jarbas_package 'ruby'
+jarbas_package 'gnupg'
 
 node['jarbas']['ruby']['gpg_keys'].each do |key|
   jarbas_execute "install_gpg_key[#{key}]" do

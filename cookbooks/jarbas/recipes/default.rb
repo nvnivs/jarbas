@@ -17,8 +17,6 @@ include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
 
-# Packages
-include_recipe 'jarbas::ruby'
 include_recipe 'jarbas::python'
 include_recipe 'jarbas::node'
 include_recipe 'jarbas::go'
