@@ -5,9 +5,8 @@
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
 # Install tfenv package
-jarbas_aur 'tfenv' do
-  action    [ :build, :install ]
-  only_if   { node['platform'] == 'arch' }
+jarbas_yay_package 'tfenv' do
+  not_if { node['platform'] == 'mac_os_x' }
 end
 
 homebrew_package 'tfenv' do
@@ -44,9 +43,8 @@ file 'version' do
 end
 
 # Terragrunt
-jarbas_aur 'terragrunt' do
-  action  [ :build, :install ]
-  only_if { node['platform'] == 'arch' }
+jarbas_yay_package 'terragrunt' do
+  not_if { node['platform'] == 'mac_os_x' }
 end
 
 homebrew_package 'terragrunt' do
