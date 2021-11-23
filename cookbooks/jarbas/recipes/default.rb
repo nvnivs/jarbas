@@ -16,3 +16,5 @@ include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
+
+include_recipe 'jarbas::platform_mac_os_x_post' if node['platform'] == 'mac_os_x'
