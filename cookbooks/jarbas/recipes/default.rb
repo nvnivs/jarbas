@@ -5,7 +5,7 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 # OS configuration
-include_recipe 'jarbas::platform_arch' if node['platform'] == 'arch'
+include_recipe 'jarbas::platform_arch' if node['platform'] == 'arch' || node['platform'] == 'manjaro'
 include_recipe 'jarbas::platform_mac_os_x' if node['platform'] == 'mac_os_x'
 
 include_recipe 'jarbas::git'
@@ -17,4 +17,5 @@ include_recipe 'jarbas::packages'
 include_recipe 'jarbas::vscode'
 include_recipe 'jarbas::brave'
 
+include_recipe 'jarbas::platform_arch_post' if node['platform'] == 'arch' || node['platform'] == 'manjaro'
 include_recipe 'jarbas::platform_mac_os_x_post' if node['platform'] == 'mac_os_x'
