@@ -24,7 +24,7 @@ def outdated_casks
   # Return empty array if brew is not installed
   if which('brew').nil? then return [] end
 
-  outdated = Mixlib::ShellOut.new('brew cask outdated',
+  outdated = Mixlib::ShellOut.new('brew outdated --cask',
                                   user: node['jarbas']['user'],
                                   environment: {
                                     'HOME' => node['jarbas']['home'],
