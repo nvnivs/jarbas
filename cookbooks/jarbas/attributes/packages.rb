@@ -51,8 +51,8 @@ default['jarbas']['packages']['homebrew'] = [
 
 # Homebrew taps for mac_os_x
 default['jarbas']['packages']['homebrew_taps'] = [
-  'caskroom/cask',
-  'caskroom/versions',
+  'homebrew/cask',
+  'homebrew/cask-versions',
   'chef/chef',
   'cjbassi/ytop',
   'heroku/brew',
