@@ -2,7 +2,11 @@
 
 set -e
 
-pushd $(dirname $(dirname $(realpath $0)))
+function real_path {
+    [[ ${1} = /* ]] && echo "${1}" || echo "${PWD}/${1#./}"
+}
+
+pushd $(dirname $(dirname $(real_path $0)))
 
 if [ -f Berksfile.lock ]; then rm -rf Berksfile.lock; fi
 berks install
