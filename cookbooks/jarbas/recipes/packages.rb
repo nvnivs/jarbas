@@ -18,15 +18,7 @@ node['jarbas']['packages']['homebrew_untap'].each do |tap|
   end
 end
 
-# Packages to install or upgrade
-node['jarbas']['packages']['upgrade'].each do |p|
-  jarbas_package p do
-    action :upgrade
-  end
-end
-
-# Packages to install only (no upgrade support)
-# Targets packages where brew fails on upgrade
+# Packages to install
 node['jarbas']['packages']['install'].each do |p|
   jarbas_package p
 end
@@ -34,7 +26,7 @@ end
 # Arch only packages, targets packages that are not suported on brew
 node['jarbas']['packages']['arch'].each do |p|
   jarbas_package p do
-    action  :upgrade
+    action  :install
     only_if { node['platform'] == 'arch' || node['platform'] == 'manjaro' }
   end
 end

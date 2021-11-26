@@ -6,9 +6,7 @@
 
 user = node['jarbas']['user']
 
-jarbas_package 'vim' do
-  action :upgrade
-end
+jarbas_package 'vim'
 
 remote_directory "#{node['jarbas']['home']}/.vim" do
   source      'vim'
