@@ -20,6 +20,7 @@ include_recipe 'jarbas::vim'
 include_recipe 'jarbas::ranger'
 include_recipe 'jarbas::urxvt'
 include_recipe 'jarbas::packages'
+include_recipe 'jarbas::vpn'
 
 case node['platform']
 when 'mac_os_x'
