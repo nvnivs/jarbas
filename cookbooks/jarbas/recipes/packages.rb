@@ -42,7 +42,7 @@ end
 # Homebrew packages, mac_os_x only
 node['jarbas']['packages']['homebrew'].each do |p|
   homebrew_package p do
-    action :upgrade
+    action :install
     only_if { node['platform'] == 'mac_os_x' }
   end
 end
