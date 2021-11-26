@@ -5,43 +5,37 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 # Docker
-jarbas_package 'docker' do
-  action :upgrade
+if node['platform'] == 'mac_os_x' then
+  homebrew_cask 'docker'
+else
+  jarbas_package 'docker'
 end
 
 # Helm
-jarbas_package 'helm' do
-  action :upgrade
-end
+jarbas_package 'helm'
 
 # Kubectl
-jarbas_yay_package 'kubectl-bin' do
-  not_if { node['platform'] == 'mac_os_x' }
-end
-
-package 'kubernetes-cli' do
-  action  :upgrade
-  only_if { node['platform'] == 'mac_os_x' }
+case node['platform']
+when 'mac_os_x'
+  package 'kubernetes-cli'
+else
+  jarbas_yay_package 'kubectl-bin'
 end
 
 # Stern: Multi pod and container log tailing for Kubernetes
-jarbas_yay_package 'stern-bin' do
-  not_if { node['platform'] == 'mac_os_x' }
-end
-
-package 'stern' do
-  action  :upgrade
-  only_if { node['platform'] == 'mac_os_x' }
+case node['platform']
+when 'mac_os_x'
+  package 'stern'
+else
+  jarbas_yay_package 'stern-bin'
 end
 
 # AWS IAM Authenticator: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster
-jarbas_yay_package 'aws-iam-authenticator-bin' do
-  not_if { node['platform'] == 'mac_os_x' }
-end
-
-package 'aws-iam-authenticator' do
-  action  :upgrade
-  only_if { node['platform'] == 'mac_os_x' }
+case node['platform']
+when 'mac_os_x'
+  package 'aws-iam-authenticator'
+else
+  jarbas_yay_package 'aws-iam-authenticator-bin'
 end
 
 # Minikube
