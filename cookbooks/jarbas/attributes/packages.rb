@@ -65,13 +65,12 @@ default['jarbas']['packages']['homebrew_casks'] = [
 #  'chef/chef/chefdk',
 #  'caskroom/versions/firefox-developer-edition',
 #  'google-chrome',
-#  'gpg-suite',                      # encrypt, decrypt, sign and verify files or messages
+  'gpg-suite',                      # encrypt, decrypt, sign and verify files or messages
 #  'java',                           # Java Standard Edition Development Kit
 #  'microsoft-remote-desktop-beta',
 #  'mysql-shell',
 #  'p4v',                            # Perforce SHASUM failures
   'rectangle',                      # Rectangle is a window management app based on Spectacle, written in Swift.
-#  'slack',
 #  'spotify',
 #  'virtualbox',
 ]
