@@ -6,7 +6,6 @@
 
 include_recipe 'jarbas::git'
 
-
 jarbas_package 'zsh'
 
 git "#{node['jarbas']['home']}/.oh-my-zsh" do
