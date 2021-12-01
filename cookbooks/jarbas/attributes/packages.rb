@@ -31,7 +31,6 @@ default['jarbas']['packages']['aur'] = [
 # Homebrew packages for mac_ox_x
 default['jarbas']['packages']['homebrew'] = [
   'coreutils',       # GNU File, Shell, and Text utilities
-#  'golang',          # Open source programming language to build simple/reliable/efficient software
 #  'gptfdisk',        # Text-mode partitioning tools
   'jq',              # Lightweight and flexible command-line JSON processor
 #  'lynx',            # Text-based web browser

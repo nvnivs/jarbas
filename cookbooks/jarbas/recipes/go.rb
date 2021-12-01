@@ -4,10 +4,12 @@
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
-# Core compiler tools for the Go programming language
+# Install go
 case node['platform']
 when 'arch', 'manjaro'
-  jarbas_package 'go-pie'
+  jarbas_package 'go'
+when 'mac_os_x'
+  jarbas_package 'golang'
 else
   raise 'Unsupported platform'
 end
