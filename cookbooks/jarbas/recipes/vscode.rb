@@ -4,9 +4,15 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-homebrew_cask 'visual-studio-code' do
-  only_if [ node['platform'] == 'mac_os_x' ]
-  owner   node['jarbas']['user']
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_yay_package 'visual-studio-code-bin'
+when 'mac_os_x'
+  homebrew_cask 'visual-studio-code' do
+    owner   node['jarbas']['user']
+  end
+else
+  raise 'Unsupported platform'
 end
 
 # Brew installs as root so permissions on the folders need to be fixed
@@ -22,10 +28,7 @@ execute 'Set ownership of Code logs folders' do
   only_if "stat -f='%Su' '#{node['jarbas']['home']}/Library/Application Support/Code/logs' |grep root"
 end
 
-jarbas_yay_package 'visual-studio-code-bin' do
-  not_if [ node['platform'] == 'mac_os_x' ]
-end
-
+# Install extensions
 node['jarbas']['vscode']['extensions'].each do |e|
   jarbas_execute "install_vscode_extension[#{e}]" do
     command "code --install-extension #{e}"

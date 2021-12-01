@@ -4,15 +4,16 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-include_recipe 'jarbas::python'
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_package 'aws-cli'
+when 'mac_os_x'
+  include_recipe 'jarbas::python'
 
-jarbas_package 'aws-cli' do
-  not_if { node['platform'] == 'mac_os_x' }
+  jarbas_execute 'pip-install[awscli]' do
+    command 'pip install awscli --upgrade'
+    not_if  'which aws'
+  end  
+else
+  raise 'Unsupported platform'
 end
-
-jarbas_execute 'pip-install[awscli]' do
-  command 'pip install awscli --upgrade'
-  not_if  'which aws'
-  only_if [ node['platform'] == 'mac_os_x' ]
-end
-

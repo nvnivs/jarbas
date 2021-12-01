@@ -5,13 +5,13 @@
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
 # Install tfenv package
-jarbas_yay_package 'tfenv' do
-  not_if { node['platform'] == 'mac_os_x' }
-end
-
-homebrew_package 'tfenv' do
-  action    :upgrade
-  only_if   { node['platform'] == 'mac_os_x' }
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_yay_package 'tfenv'
+when 'mac_os_x'
+  homebrew_package 'tfenv'
+else
+  raise 'Unsupported platform'
 end
 
 # User needs to reload a new session for groups to load

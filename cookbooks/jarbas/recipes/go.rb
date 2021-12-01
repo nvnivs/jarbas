@@ -1,5 +1,15 @@
-jarbas_package 'go-pie' do
-  not_if { node['platform'] == 'mac_os_x' }
+#
+# Cookbook:: jarbas
+# Recipe:: go
+#
+# Copyright:: 2021, The Authors, All Rights Reserved.
+
+# Core compiler tools for the Go programming language
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_package 'go-pie'
+else
+  raise 'Unsupported platform'
 end
 
 # Dependency manager

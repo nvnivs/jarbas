@@ -4,8 +4,11 @@
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
-if node['platform'] == 'mac_os_x' then
-    homebrew_cask 'spotify'
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_yay_package 'spotify'
+when 'mac_os_x'
+  homebrew_cask 'spotify'
 else
-    jarbas_yay_package 'spotify'
+  raise 'Unsupported platform'
 end

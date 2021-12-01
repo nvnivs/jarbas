@@ -15,7 +15,7 @@ execute 'Pacman clean' do
 end
 
 execute 'Yay update' do
-    command     'yay -Syu --noconfirm'
+    command     'yay -Syu --builddir=/tmp/ --noconfirm'
     live_stream true
 end
 

@@ -4,8 +4,11 @@
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
-if node['platform'] == 'mac_os_x' then
-    homebrew_cask 'firefox-developer-edition'
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_package 'firefox-developer-edition'
+when 'mac_os_x'
+  homebrew_cask 'firefox-developer-edition'
 else
-    jarbas_package 'firefox-developer-edition'
+  raise 'Unsupported platform'
 end

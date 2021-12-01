@@ -4,10 +4,11 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
-jarbas_package 'qutebrowser' do
-  not_if { node['platform'] == 'mac_os_x' }
-end
-
-homebrew_cask 'qutebrowser' do
-  only_if { node['platform'] == 'mac_os_x' }
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_package 'qutebrowser'
+when 'mac_os_x'
+  homebrew_cask 'qutebrowser'
+else
+  raise 'Unsupported platform'
 end
