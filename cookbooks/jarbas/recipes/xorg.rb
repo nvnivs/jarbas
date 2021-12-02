@@ -8,7 +8,8 @@ home = node['jarbas']['home']
 user = node['jarbas']['user']
 
 # xorg
-package 'xorg-server'
+jarbas_package 'xorg-server'
+
 
 template "#{home}/.Xresources" do
   source 'Xresources.erb'
@@ -17,7 +18,7 @@ template "#{home}/.Xresources" do
 end
 
 # xinit
-package 'xorg-xinit'
+jarbas_package 'xorg-xinit'
 
 template "#{home}/.xinitrc" do
   source 'xinitrc.erb'
@@ -26,10 +27,7 @@ template "#{home}/.xinitrc" do
 end
 
 # Manage screen resolution
-package 'xorg-xrandr'
+jarbas_package 'xorg-xrandr'
 
 # Command line interface to the X11 clipboard
-package 'xclip'
-
-# Launch shell commands with your keyboard or your mouse under X
-package 'xbindkeys'
+jarbas_package 'xclip'

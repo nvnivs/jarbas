@@ -4,7 +4,6 @@
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
-
 case node['platform']
 when 'arch', 'manjaro'
   jarbas_yay_package 'heroku-cli-bin'
