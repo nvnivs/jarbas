@@ -3,12 +3,18 @@ DEPENDENCIES
     path: cookbooks/jarbas
 
 GRAPH
+  ark (6.0.3)
+    seven_zip (>= 3.1)
   chef_client_updater (3.12.2)
+  git (11.0.1)
+    ark (>= 0.0.0)
   homebrew (5.2.2)
-  jarbas (4.27.0)
+  jarbas (4.22.0)
     chef_client_updater (~> 3.9)
+    git (~> 11.0)
     homebrew (~> 5.0)
     macos (~> 3.2)
     vagrant (~> 2.0)
   macos (3.4.2)
+  seven_zip (4.2.2)
   vagrant (2.0.6)
