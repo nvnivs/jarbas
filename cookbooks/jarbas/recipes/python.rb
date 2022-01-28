@@ -24,3 +24,12 @@ code_extensions.each do |e|
     not_if "code --list-extensions |grep #{e}"
   end
 end
+
+# pip packages
+pip_packages = ['pytest', 'tox']
+pip_packages.each do |p|
+  jarbas_execute "pip_package[#{p}]" do
+    command "pip3 install #{p}"
+    not_if "pip3 list |grep #{p}"
+  end
+end
