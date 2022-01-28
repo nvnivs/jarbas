@@ -50,7 +50,7 @@ default['jarbas']['packages']['homebrew_taps'] = [
   'homebrew/cask-versions',
   'chef/chef',
 #  'cjbassi/ytop',
-  'heroku/brew',
+  'heroku/brew'
 ]
 
 default['jarbas']['packages']['homebrew_untap'] = [
