@@ -6,16 +6,21 @@
 
 jarbas_package 'python'
 
-
 # Pip
 case node['platform']
 when 'arch', 'manjaro'
   jarbas_package 'python-pip'
 when 'mac_os_x'
-  jarbas_execute 'install-pip' do
-    command 'sudo easy_install pip'
-    not_if  'which pip'
-  end
+  # Skip, Homebrew installs pip3 pointing to the Homebrew’d Python 3 for you.
 else
   raise 'Unsupported platform'
+end
+
+# code extensions
+code_extensions = ['ms-python.python']
+code_extensions.each do |e|
+  jarbas_execute "install_vscode_extension[#{e}]" do
+    command "code --install-extension #{e}"
+    not_if "code --list-extensions |grep #{e}"
+  end
 end
