@@ -1,4 +1,4 @@
-name: 1. Test
+name: CI
 
 on:
   push:
@@ -8,7 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+
+  Linting:
     runs-on: ubuntu-latest
     steps:
 
