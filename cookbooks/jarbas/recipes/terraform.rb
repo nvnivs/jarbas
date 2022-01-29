@@ -33,9 +33,8 @@ end
 file 'version' do
   content node['jarbas']['terraform']['default_version']
   group   'tfenv'
-  mode    0664
-  path    case node['platform']
-          when 'mac_os_x'
+  mode    '664'
+  path    if platform?('mac_os_x')
             '/usr/local/Cellar/tfenv/2.0.0/version'
           else
             '/var/lib/tfenv/version'
@@ -44,16 +43,16 @@ end
 
 # Terragrunt
 jarbas_yay_package 'terragrunt' do
-  not_if { node['platform'] == 'mac_os_x' }
+  not_if { platform?('mac_os_x') }
 end
 
 homebrew_package 'terragrunt' do
   options '--ignore-dependencies'
-  only_if { node['platform'] == 'mac_os_x' }
+  only_if { platform?('mac_os_x') }
 end
 
 # Plugins
 jarbas_execute 'terraform_plugin[godaddy]' do
   command 'curl -s https://raw.githubusercontent.com/n3integration/terraform-godaddy/master/install.sh |bash -'
-  not_if  { ::File.exist?("#{node['jarbas']['home']}/.terraform/plugins/terraform-godaddy")}
+  not_if  { ::File.exist?("#{node['jarbas']['home']}/.terraform/plugins/terraform-godaddy") }
 end

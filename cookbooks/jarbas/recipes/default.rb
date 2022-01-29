@@ -6,11 +6,11 @@
 
 case node['platform']
 when 'mac_os_x'
-    include_recipe 'jarbas::platform_mac_os_x'
+  include_recipe 'jarbas::platform_mac_os_x'
 when 'arch', 'manjaro'
-    include_recipe 'jarbas::platform_arch'
+  include_recipe 'jarbas::platform_arch'
 else
-    raise 'Unsupported platform'
+  raise 'Unsupported platform'
 end
 
 include_recipe 'jarbas::git'
@@ -24,9 +24,9 @@ include_recipe 'jarbas::vpn'
 
 case node['platform']
 when 'mac_os_x'
-    include_recipe 'jarbas::platform_mac_os_x_post'
+  include_recipe 'jarbas::platform_mac_os_x_post'
 when 'arch', 'manjaro'
-    include_recipe 'jarbas::platform_arch_post'
+  include_recipe 'jarbas::platform_arch_post'
 else
-    raise 'Unsupported platform'
+  raise 'Unsupported platform'
 end

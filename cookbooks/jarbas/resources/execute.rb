@@ -1,6 +1,6 @@
 property :command, String, required: true
-property :name, String, name_property: true
-property :live_stream, [ TrueClass, FalseClass ], default: false
+
+property :live_stream, [true, false], default: false
 
 action :run do
   execute   new_resource.name do
@@ -13,7 +13,4 @@ action :run do
       'USER' => node['jarbas']['user']
     )
   end
-end
-
-action :nothing do
 end

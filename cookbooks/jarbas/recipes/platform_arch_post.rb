@@ -24,7 +24,7 @@ execute 'Yay clean' do
   live_stream true
 end
 
-#TODO: guard needs to change if not manjaro
+# TODO: guard needs to change if not manjaro
 reboot 'Kernel changed' do
   action     :request_reboot
   reason     'Kernel changed, rebooting...'

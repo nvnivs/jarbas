@@ -3,10 +3,9 @@ maintainer 'n'
 maintainer_email 'nvnivs@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures workstation'
-long_description 'Installs/Configures workstation'
-version '4.40.2'
+version '4.40.3'
 
-chef_version '>= 15.14' if respond_to?(:chef_version)
+chef_version '>= 15.14'
 issues_url 'https://github.com/z0c/jarbas/issues'
 source_url 'https://github.com/z0c/jarbas'
 

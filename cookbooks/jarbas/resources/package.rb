@@ -1,4 +1,4 @@
-property :name, String, name_property: true
+
 
 action :install do
   case node['platform']
@@ -7,6 +7,6 @@ action :install do
   when 'manjaro'
     pacman_package new_resource.name
   else
-      raise 'Unsupported platform'
-  end     
+    raise 'Unsupported platform'
+  end
 end

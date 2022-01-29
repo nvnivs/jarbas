@@ -13,7 +13,7 @@ else
   raise 'Unsupported platform'
 end
 
-#TODO: Set dark theme
-#TODO: Install extensions programatically
+# TODO: Set dark theme
+# TODO: Install extensions programatically
 # Bitwarden
 # Translate

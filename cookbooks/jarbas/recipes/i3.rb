@@ -27,12 +27,12 @@ end
 case node['platform']
 when 'arch'
   jarbas_package 'i3status'
-  
+
   directory "#{home}/.config/i3status" do
     owner user
     mode  '0755'
   end
-  
+
   template "#{home}/.config/i3status/config" do
     source 'i3status_config.erb'
     owner  user

@@ -6,5 +6,5 @@
 
 package 'wtfutil' do
   action  :upgrade
-  only_if { node['platform'] == 'mac_os_x' }
+  only_if { platform?('mac_os_x') }
 end

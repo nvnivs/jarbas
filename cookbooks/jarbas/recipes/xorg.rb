@@ -10,7 +10,6 @@ user = node['jarbas']['user']
 # xorg
 jarbas_package 'xorg-server'
 
-
 template "#{home}/.Xresources" do
   source 'Xresources.erb'
   owner  user

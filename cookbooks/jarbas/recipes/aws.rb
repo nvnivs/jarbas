@@ -13,7 +13,7 @@ when 'mac_os_x'
   jarbas_execute 'pip-install[awscli]' do
     command 'pip install awscli --upgrade'
     not_if  'which aws'
-  end  
+  end
 else
   raise 'Unsupported platform'
 end

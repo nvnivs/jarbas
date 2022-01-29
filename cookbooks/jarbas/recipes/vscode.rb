@@ -18,13 +18,13 @@ end
 # Brew installs as root so permissions on the folders need to be fixed
 execute 'Set ownership of Code folders' do
   command "chown -R #{node['jarbas']['user']} '#{node['jarbas']['home']}/Library/Application Support/Code'"
-  only_if [ node['platform'] == 'mac_os_x' ]
+  only_if [ platform?('mac_os_x') ]
   only_if "stat -f='%Su' '#{node['jarbas']['home']}/Library/Application Support/Code' |grep root"
 end
 
 execute 'Set ownership of Code logs folders' do
   command "chown -R #{node['jarbas']['user']} '#{node['jarbas']['home']}/Library/Application Support/Code/logs'"
-  only_if [ node['platform'] == 'mac_os_x' ]
+  only_if [ platform?('mac_os_x') ]
   only_if "stat -f='%Su' '#{node['jarbas']['home']}/Library/Application Support/Code/logs' |grep root"
 end
 
