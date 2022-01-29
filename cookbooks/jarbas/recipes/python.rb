@@ -12,6 +12,7 @@ when 'arch', 'manjaro'
   jarbas_package 'python-pip'
 when 'mac_os_x'
   # Skip, Homebrew installs pip3 pointing to the Homebrew’d Python 3 for you.
+  nil
 else
   raise 'Unsupported platform'
 end

@@ -34,11 +34,7 @@ file 'version' do
   content node['jarbas']['terraform']['default_version']
   group   'tfenv'
   mode    '664'
-  path    if platform?('mac_os_x')
-            '/usr/local/Cellar/tfenv/2.0.0/version'
-          else
-            '/var/lib/tfenv/version'
-          end
+  path    platform?('mac_os_x') ? '/usr/local/Cellar/tfenv/2.0.0/version' : '/var/lib/tfenv/version'
 end
 
 # Terragrunt

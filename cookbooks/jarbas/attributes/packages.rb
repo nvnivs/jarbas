@@ -54,4 +54,4 @@ default['jarbas']['packages']['homebrew_untap'] = [
 default['jarbas']['packages']['homebrew_casks'] = [
   'gpg-suite', # encrypt, decrypt, sign and verify files or messages
   'rectangle', # Rectangle is a window management app based on Spectacle, written in Swift.
-
+]
