@@ -27,7 +27,7 @@ end
 node['jarbas']['packages']['arch'].each do |p|
   jarbas_package p do
     action  :install
-    only_if { platform?('arch') || platform?('manjaro') }
+    only_if { platforms?('arch', 'manjaro') }
   end
 end
 
@@ -35,7 +35,7 @@ end
 node['jarbas']['packages']['aur'].each do |p|
   jarbas_yay_package p do
     action  :install
-    only_if { platform?('arch') || platform?('manjaro') }
+    only_if { platform?('arch', 'manjaro') }
   end
 end
 

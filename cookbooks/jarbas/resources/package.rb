@@ -1,4 +1,4 @@
-
+unified_mode true
 
 action :install do
   case node['platform']

@@ -1,4 +1,4 @@
-
+unified_mode true
 
 action :install do
   execute "yay -S #{new_resource.name}" do
