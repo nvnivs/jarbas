@@ -1,0 +1,26 @@
+name: 1. Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+      
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+          
+      - name: Setup cookstyle
+        run: gem install cookstyle
+        
+      - name: Run cookstyle
+        run: cookstyle cookbooks/jarbas
