@@ -37,8 +37,8 @@ jobs:
         with:
           ruby-version: 2.6.x
           
-      - name: Setup cookstyle
+      - name: Setup flay
         run: gem install flay
         
       - name: Run flay
-        run: flay cookbooks/jarbas/*.rb
+        run: flay cookbooks/jarbas/**/*.rb
