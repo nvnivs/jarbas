@@ -9,14 +9,14 @@ function real_path {
 # Parameters
 recipe=${1:-default}
 
+# Create default attributes if it doesnt exist
+if [ ! -f ~/.jarbas.json ]; then
+    echo '{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}' > ~/.jarbas.json
+fi
+
 # Get ready
 runlist="recipe[jarbas::osx_sudoers_nopass],recipe[jarbas::${recipe}],recipe[jarbas::osx_sudoers]"
-json='{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}'
-
-# Use local settings if found
-if [ -f ~/jarbas_node_data.json ]; then
-    json=$(cat ~/jarbas_node_data.json)
-fi
+json=$(cat ~/.jarbas.json)
 
 sudo -v
 pushd $(dirname $(dirname $(real_path $0)))

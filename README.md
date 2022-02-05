@@ -21,3 +21,8 @@ After the first setup, `converge.sh` is aliased to `j`, so the above can be used
 
     $ j brew
 
+## Custom attributes
+
+Node attributes are set on `${HOME}/.jarbas.json`. This file will be created on the first run if not found.
+
+To run additional recipes override the `jarbas['node_recipes']` array with a list of any recipes you want to run on the node.
