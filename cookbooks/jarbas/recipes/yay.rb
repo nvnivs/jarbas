@@ -1,7 +1,7 @@
 #
 # Cookbook:: jarbas
-# Recipe:: manjaro
+# Recipe:: yay
 #
 # Copyright:: 2022, The Authors, All Rights Reserved.
 
-include_recipe 'jarbas::yay'
+jarbas_package 'yay'
