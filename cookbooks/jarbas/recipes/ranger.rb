@@ -9,6 +9,11 @@ user = node['jarbas']['user']
 
 jarbas_package 'ranger'
 
+directory "#{home}/.config/" do
+  owner user
+  mode  '0755'
+end
+
 directory "#{home}/.config/ranger/" do
   owner user
   mode  '0755'
