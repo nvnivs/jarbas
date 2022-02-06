@@ -11,6 +11,27 @@ else
   jarbas_package 'docker'
 end
 
+# Manage docker as user
+group 'docker' do
+  members  [ node['jarbas']['user'] ]
+  notifies :run, 'jarbas_execute[reload_group]', :immediately
+end
+
+jarbas_execute 'reload_group' do
+  command 'newgrp docker'
+  action  :nothing
+  not_if  { platform?('mac_os_x') }
+end
+
+# Configure Docker to start on boot
+service 'docker.service' do
+  action [ :enable, :start ]
+end
+
+service 'containerd.service' do
+  action [ :enable, :start ]
+end
+
 # Helm
 jarbas_package 'helm'
 
