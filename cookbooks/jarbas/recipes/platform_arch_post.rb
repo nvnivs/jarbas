@@ -22,6 +22,7 @@ end
 execute 'Yay clean' do
   command     'yay -Sc --noconfirm'
   live_stream true
+  only_if     { ::File.directory?('/var/cache/yay') }
 end
 
 # TODO: guard needs to change if not manjaro
