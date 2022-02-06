@@ -1,0 +1,24 @@
+---
+driver:
+  name: dokken
+  chef_version: 15
+  privileged: true  # allows systemd services to start
+
+provisioner:
+  name: dokken
+
+transport:
+  name: dokken
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: manjarolinux-base
+    driver:
+      image: manjarolinux/base
+
+suites:
+  - name: default
+    run_list:
+      - recipe[jarbas::default]

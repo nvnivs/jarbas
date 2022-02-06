@@ -26,7 +26,7 @@ jobs:
       - name: Run cookstyle
         run: cookstyle cookbooks/jarbas
 
-  Duplicate-analysis:
+  Duplicates:
     runs-on: ubuntu-latest
     steps:
 
@@ -42,3 +42,17 @@ jobs:
         
       - name: Run flay
         run: flay cookbooks/jarbas/**/*.rb
+
+  Kitchen:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+      
+      - name: Install Chef
+        uses: actionshub/chef-install@master
+
+      - name: Test-Kitchen
+        uses: actionshub/test-kitchen@master
+        env:
+          CHEF_LICENSE: accept-no-persist
