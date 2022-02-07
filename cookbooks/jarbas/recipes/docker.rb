@@ -7,29 +7,29 @@
 # Docker
 if platform?('mac_os_x')
   homebrew_cask 'docker'
+  services = ['docker']
 else
   jarbas_package 'docker'
+  services = ['docker.service', 'containerd.service']
 end
 
 # Manage docker as user
 group 'docker' do
   members  [ node['jarbas']['user'] ]
-  notifies :run, 'jarbas_execute[reload_group]', :immediately
+  notifies :run, 'jarbas_execute[reload_docker_group]', :immediately
 end
 
-jarbas_execute 'reload_group' do
+jarbas_execute 'reload_docker_group' do
   command 'newgrp docker'
   action  :nothing
   not_if  { platform?('mac_os_x') }
 end
 
-# Configure Docker to start on boot
-service 'docker.service' do
-  action [ :enable, :start ]
-end
-
-service 'containerd.service' do
-  action [ :enable, :start ]
+# Configure services to start on boot
+services.each do |s|
+  service s do
+    action [ :enable, :start ]
+  end
 end
 
 # Helm
