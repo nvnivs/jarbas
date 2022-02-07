@@ -4,11 +4,6 @@
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
-execute 'Pacman update' do
-  command     'pacman -Syu --noconfirm'
-  live_stream true
-end
-
 execute 'Pacman clean' do
   command     'pacman -Sc --noconfirm'
   live_stream true
