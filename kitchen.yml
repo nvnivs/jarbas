@@ -26,14 +26,8 @@ suites:
   - name: default
     run_list:
       - recipe[jarbas::default]
+    verifier:
+      inspec_tests:
+        - cookbooks/jarbas/test/integration/default/git_test.rb
+        - cookbooks/jarbas/test/integration/default/vim_test.rb
 
-  - name: allemaal
-    run_list:
-      - recipe[jarbas::default]
-    attributes: {
-      jarbas: {
-        recipes: [
-          aws
-        ]
-      }
-    }
