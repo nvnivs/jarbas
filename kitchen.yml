@@ -1,7 +1,7 @@
 ---
 driver:
   name: dokken
-  chef_version: 15
+  chef_version: 15  # Version currently installed by chefdk on Manjaro
   privileged: true  # allows systemd services to start
 
 provisioner:
@@ -19,6 +19,7 @@ platforms:
       image: manjarolinux/base
 
 suites:
+  
   - name: default
     run_list:
       - recipe[jarbas::default]
