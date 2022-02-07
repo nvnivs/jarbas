@@ -17,6 +17,7 @@ platforms:
   - name: manjarolinux-base
     intermediate_instructions:
       - RUN /usr/bin/pacman -Syyu --noconfirm
+    pid_one_command: /bin/systemd
     driver:
       image: manjarolinux/base
 
@@ -25,3 +26,14 @@ suites:
   - name: default
     run_list:
       - recipe[jarbas::default]
+
+  - name: allemaal
+    run_list:
+      - recipe[jarbas::default]
+    attributes: {
+      jarbas: {
+        recipes: [
+          aws
+        ]
+      }
+    }
