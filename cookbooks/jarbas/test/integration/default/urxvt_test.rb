@@ -1,5 +1,5 @@
 # InSpec test for recipe jarbas::ranger
 
-describe package('ranger') do
+describe package('rxvt-unicode') do
   it { should be_installed }
 end

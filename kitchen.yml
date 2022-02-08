@@ -29,5 +29,7 @@ suites:
     verifier:
       inspec_tests:
         - cookbooks/jarbas/test/integration/default/git_test.rb
+        - cookbooks/jarbas/test/integration/default/zsh_test.rb
         - cookbooks/jarbas/test/integration/default/vim_test.rb
-
+        - cookbooks/jarbas/test/integration/default/ranger_test.rb
+        - cookbooks/jarbas/test/integration/default/urxvt_test.rb
