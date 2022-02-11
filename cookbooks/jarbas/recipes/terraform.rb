@@ -34,7 +34,7 @@ file 'version' do
   content node['jarbas']['terraform']['default_version']
   group   'tfenv'
   mode    '664'
-  #TODO: Version needs to be dynamically foud on macox otherwise thiw will error everytime the version changes
+  # TODO: Version needs to be dynamically foud on macox otherwise thiw will error everytime the version changes
   path    platform?('mac_os_x') ? '/usr/local/Cellar/tfenv/2.2.3/version' : '/var/lib/tfenv/version'
 end
 

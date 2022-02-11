@@ -48,6 +48,9 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
+      
+      - name: Install Chef
+        uses: actionshub/chef-install@2.0.3
 
       - name: Test-Kitchen
         uses: actionshub/test-kitchen@2.0.0
