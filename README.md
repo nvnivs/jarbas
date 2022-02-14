@@ -26,3 +26,12 @@ After the first setup, `converge.sh` is aliased to `j`, so the above can be used
 Node attributes are set on `${HOME}/.jarbas.json`. This file will be created on the first run if not found.
 
 To run additional recipes override `jarbas['recipes']` with a list of any recipes you want to run on the node.
+
+## Testing
+
+### Integration
+
+Test kitchen is used for integration tests. 
+
+    $ kitchen test
+ 

@@ -14,7 +14,8 @@ verifier:
   name: inspec
 
 platforms:
-  - name: manjarolinux-base
+
+  - name: manjaro
     intermediate_instructions:
       - RUN /usr/bin/pacman -Syyu --noconfirm
     pid_one_command: /bin/systemd
