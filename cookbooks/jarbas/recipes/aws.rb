@@ -11,7 +11,7 @@ when 'mac_os_x'
   include_recipe 'jarbas::python'
 
   jarbas_execute 'pip-install[awscli]' do
-    command 'pip install awscli --upgrade'
+    command 'pip3 install awscli --upgrade'
     not_if  'which aws'
   end
 else
