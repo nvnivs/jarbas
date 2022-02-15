@@ -19,7 +19,7 @@ runlist="recipe[jarbas::osx_sudoers_nopass],recipe[jarbas::${recipe}],recipe[jar
 json=$(cat ~/.jarbas.json)
 
 sudo -v
-pushd $(dirname $(dirname $(real_path $0)))
+pushd $(dirname $(dirname $(real_path $0))) >/dev/null
 
 # Chef if update is required
 if [ ! -d berks-cookbooks ]; then
@@ -30,4 +30,4 @@ fi
 echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin -c .chef/client.rb --chef-license accept
 
 # Tidy up
-popd
+popd >/dev/null
