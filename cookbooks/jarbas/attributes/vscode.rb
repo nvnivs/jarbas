@@ -3,7 +3,7 @@ default['jarbas']['vscode']['extensions'] = [
   'hashicorp.terraform',
   'ms-azuretools.vscode-docker',
   'ms-kubernetes-tools.vscode-kubernetes-tools',
-  'golang.Go',
+  'golang.go',
   'rebornix.ruby',
   'redhat.vscode-yaml',
 ]
