@@ -67,4 +67,4 @@ jobs:
         uses: actionshub/chef-install@2.0.3
 
       - name: RSpec
-        run: chef exec rspec
+        run: chef exec rspec --chef-license accept
