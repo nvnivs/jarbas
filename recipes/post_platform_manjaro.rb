@@ -4,4 +4,4 @@
 #
 # Copyright:: 2022, The Authors, All Rights Reserved.
 
-include_recipe 'jarbas::platform_arch_post'
+include_recipe 'jarbas::post_platform_arch'

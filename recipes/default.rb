@@ -5,7 +5,7 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 # Pre-platform
-include_recipe "jarbas::platform_#{node['platform']}"
+include_recipe 'jarbas::pre_platform'
 
 # Base recipes
 include_recipe 'jarbas::git'
@@ -24,4 +24,4 @@ node['jarbas']['recipes'].each do |r|
 end
 
 # Post-platform
-include_recipe "jarbas::platform_#{node['platform']}_post"
+include_recipe 'jarbas::post_platform'
