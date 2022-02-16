@@ -66,8 +66,8 @@ jobs:
       - name: Install Chef
         uses: actionshub/chef-install@2.0.3
 
-      - name: Accept chef license
-        run: chef env --accept-license
 
       - name: RSpec
         run: chef exec rspec
+        env:
+          CHEF_LICENSE: accept-no-persist
