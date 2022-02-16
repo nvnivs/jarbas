@@ -4,6 +4,13 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
+cookbook_file '/etc/sudoers' do
+  source 'sudoers_nopass'
+  owner 'root'
+  group 'wheel'
+  mode '0440'
+end
+
 command_line_tools 'install command line tools'
 include_recipe 'homebrew::default'
 

@@ -1,11 +1,11 @@
 # jarbas
 
-A rather opinionated Chef repo to provision and configure workstations
+A rather opinionated cookbook to provision and configure workstations
 
 ## Pre-requisites
 
 * `git`: To checkout the repo
-* `chef-dk`: Need chef-client and berkshelf
+* `chef-dk`: Need chef-client and chef
 
 ## How to use
 

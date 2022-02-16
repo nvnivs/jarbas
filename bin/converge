@@ -20,14 +20,19 @@ json=$(cat ~/.jarbas.json)
 
 sudo -v
 pushd $(dirname $(dirname $(real_path $0))) >/dev/null
+WORK_DIR=`mktemp -d -t "jarbas_"`
 
-# Chef if update is required
-if [ ! -d berks-cookbooks ]; then
-    bin/update
-fi
+# Generate policy
+if [ -f Policyfile.lock.json ]; then rm -rf Policyfile.lock.json; fi
+chef install --chef-license accept
+
+# Export policy
+chef export $WORK_DIR --chef-license accept --force
 
 # Run chef
-echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin -c .chef/client.rb --chef-license accept
+pushd $WORK_DIR >/dev/null
+echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin --chef-license accept
 
 # Tidy up
 popd >/dev/null
+sudo rm -rf $WORK_DIR
