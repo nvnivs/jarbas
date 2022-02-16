@@ -13,21 +13,22 @@ fi
 
 # Prepare
 sudo -v
+run_list=${1:-default}
 json=$(cat ~/.jarbas.json)
-pushd $(dirname $(dirname $(real_path $0))) >/dev/null
-WORK_DIR=`mktemp -d -t "jarbas_XXXXX"`
+work_dir=`mktemp -d -t "jarbas_XXXXX"`
 
 # Generate policy
+pushd $(dirname $(dirname $(real_path $0))) >/dev/null
 if [ -f Policyfile.lock.json ]; then rm -rf Policyfile.lock.json; fi
 chef install --chef-license accept
 
 # Export policy
-chef export $WORK_DIR --chef-license accept --force
+chef export $work_dir --chef-license accept --force
 
 # Run chef
-pushd $WORK_DIR >/dev/null
-echo ${json} | sudo chef-client -z -j /dev/stdin --chef-license accept
+pushd $work_dir >/dev/null
+echo ${json} | sudo chef-client -z -n ${run_list} -j /dev/stdin --chef-license accept
 
 # Tidy up
 popd >/dev/null
-sudo rm -rf $WORK_DIR
+sudo rm -rf $work_dir

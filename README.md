@@ -13,9 +13,13 @@ Run the converge script to execute the entire setup
 
     $ ./bin/converge.sh
 
+Named run lists can be executed by passing the name as the first positional parameter
+
+    $ ./bin/converge.sh aws
+
 After the first setup, `converge.sh` is aliased to `j`, so the above can be used as
 
-    $ j brew
+    $ j aws
 
 ## Custom attributes
 

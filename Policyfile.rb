@@ -14,3 +14,7 @@ run_list 'jarbas::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'jarbas', path: '.'
+
+# Named run lists; Runs ad hoc recipes
+named_run_list 'default', 'jarbas::default'
+named_run_list 'aws', 'jarbas::aws'
