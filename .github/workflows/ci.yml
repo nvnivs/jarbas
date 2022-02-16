@@ -23,7 +23,7 @@ jobs:
       - name: Setup cookstyle
         run: gem install cookstyle
         
-      - name: Run cookstyle
+      - name: Cookstyle
         run: cookstyle .
 
   Duplicates:
@@ -40,10 +40,10 @@ jobs:
       - name: Setup flay
         run: gem install flay
         
-      - name: Run flay
+      - name: Flay
         run: flay **/*.rb
 
-  Kitchen:
+  Test-Integration:
     runs-on: ubuntu-latest
     steps:
 
@@ -52,7 +52,19 @@ jobs:
       - name: Install Chef
         uses: actionshub/chef-install@2.0.3
 
-      - name: Test-Kitchen
+      - name: Kitchen
         uses: actionshub/test-kitchen@2.0.0
         env:
           CHEF_LICENSE: accept-no-persist
+
+  Test-Unit:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+      
+      - name: Install Chef
+        uses: actionshub/chef-install@2.0.3
+
+      - name: RSpec
+        run: chef exec rspec
