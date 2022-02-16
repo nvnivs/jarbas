@@ -24,7 +24,7 @@ jobs:
         run: gem install cookstyle
         
       - name: Run cookstyle
-        run: cookstyle cookbooks/jarbas
+        run: cookstyle .
 
   Duplicates:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
         run: gem install flay
         
       - name: Run flay
-        run: flay cookbooks/jarbas/**/*.rb
+        run: flay **/*.rb
 
   Kitchen:
     runs-on: ubuntu-latest
