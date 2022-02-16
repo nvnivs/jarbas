@@ -1,2 +1,2 @@
 require 'chefspec'
-require 'chefspec/Policyfile'
+require 'chefspec/policyfile'
