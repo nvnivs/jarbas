@@ -13,10 +13,6 @@ Run the converge script to execute the entire setup
 
     $ ./bin/converge.sh
 
-Alternatively pass a single recipe as a parameter
-
-    $ ./bin/converge.sh brew
-
 After the first setup, `converge.sh` is aliased to `j`, so the above can be used as
 
     $ j brew
@@ -28,6 +24,12 @@ Node attributes are set on `${HOME}/.jarbas.json`. This file will be created on 
 To run additional recipes override `jarbas['recipes']` with a list of any recipes you want to run on the node.
 
 ## Testing
+
+### Unit
+
+RSpec is used for unit tests. 
+
+    $ chef exec rspec
 
 ### Integration
 

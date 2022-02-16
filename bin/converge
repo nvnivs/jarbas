@@ -6,21 +6,16 @@ function real_path {
     [[ ${1} = /* ]] && echo "${1}" || echo "${PWD}/${1#./}"
 }
 
-# Parameters
-recipe=${1:-default}
-
 # Create default attributes if it doesnt exist
 if [ ! -f ~/.jarbas.json ]; then
     echo '{"jarbas":{"home": "'"${HOME}"'", "user":"'"${USER}"'"}}' > ~/.jarbas.json
 fi
 
-# Get ready
-runlist="recipe[jarbas::osx_sudoers_nopass],recipe[jarbas::${recipe}],recipe[jarbas::osx_sudoers]"
-json=$(cat ~/.jarbas.json)
-
+# Prepare
 sudo -v
+json=$(cat ~/.jarbas.json)
 pushd $(dirname $(dirname $(real_path $0))) >/dev/null
-WORK_DIR=`mktemp -d -t "jarbas_"`
+WORK_DIR=`mktemp -d -t "jarbas_XXXXX"`
 
 # Generate policy
 if [ -f Policyfile.lock.json ]; then rm -rf Policyfile.lock.json; fi
@@ -31,7 +26,7 @@ chef export $WORK_DIR --chef-license accept --force
 
 # Run chef
 pushd $WORK_DIR >/dev/null
-echo ${json} | sudo chef-client -z -o "${runlist}" -j /dev/stdin --chef-license accept
+echo ${json} | sudo chef-client -z -j /dev/stdin --chef-license accept
 
 # Tidy up
 popd >/dev/null
