@@ -16,18 +16,15 @@ verifier:
 platforms:
 
   - name: manjaro
-    intermediate_instructions:
-      - RUN /usr/bin/pacman -Syyu --noconfirm
-    pid_one_command: /bin/systemd
     driver:
       image: manjarolinux/base
+      pid_one_command: /usr/lib/systemd/systemd
 
 suites:
   
   - name: default
     run_list:
       - recipe[jarbas::default]
-    attributes: { jarbas: { chef: { install: false }}}
     verifier:
       inspec_tests:
         - test/integration/default/git_test.rb

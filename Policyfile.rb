@@ -18,4 +18,6 @@ cookbook 'jarbas', path: '.'
 # Named run lists; Runs ad hoc recipes
 named_run_list 'default', 'jarbas::default'
 named_run_list 'aws', 'jarbas::pre_platform', 'jarbas::aws', 'jarbas::post_platform'
+named_run_list 'chef', 'jarbas::chef'
 named_run_list 'python', 'jarbas::pre_platform', 'jarbas::python', 'jarbas::post_platform'
+named_run_list 'yay', 'jarbas::yay'
