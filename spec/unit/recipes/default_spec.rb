@@ -1,12 +1,12 @@
 #
 # Cookbook:: jarbas
-# Spec:: aws
+# Spec:: default
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'jarbas::aws' do
+describe 'jarbas::default' do
   context 'When all attributes are default, on Arch' do
     # for a complete list of available platforms and versions see:
     # https://github.com/chefspec/fauxhai/blob/master/PLATFORMS.md
