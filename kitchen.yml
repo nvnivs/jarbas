@@ -27,6 +27,7 @@ suites:
   - name: default
     run_list:
       - recipe[jarbas::default]
+    attributes: { jarbas: { chef: { install: false }}}
     verifier:
       inspec_tests:
         - test/integration/default/git_test.rb
