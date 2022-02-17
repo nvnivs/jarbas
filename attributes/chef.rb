@@ -1,1 +1,1 @@
-default['jarbas']['chef']['install'] = True
+default['jarbas']['chef']['install'] = true
