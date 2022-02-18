@@ -54,12 +54,3 @@ casks.each do |c|
     only_if { platform?('mac_os_x') }
   end
 end
-
-# Update outdated casks, mac_os_x only
-outdated_casks do |cask|
-  jarbas_execute "brew_cask_upgrade[#{cask}]" do
-    command "brew cask upgrade #{cask}"
-    only_if { casks.include? cask }
-    only_if { platform?('mac_os_x') }
-  end
-end
