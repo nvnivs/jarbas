@@ -7,6 +7,8 @@
 jarbas_execute 'softwareupdate' do
   command     'softwareupdate --all --install --force'
   live_stream true
+  guard_interpreter :bash
+  not_if      'softwareupdate -l 2> >(grep -F "No new software available.")'
 end
 
 jarbas_execute 'brew upgrade' do
