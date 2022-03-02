@@ -19,6 +19,8 @@ platforms:
     driver:
       image: manjarolinux/base
       pid_one_command: /usr/lib/systemd/systemd
+      intermediate_instructions:
+        - RUN /usr/bin/pacman -Syy --noconfirm libxcrypt-compat
 
 suites:
   
