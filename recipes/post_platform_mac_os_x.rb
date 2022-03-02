@@ -12,6 +12,7 @@ end
 jarbas_execute 'brew upgrade' do
   command     'brew upgrade'
   live_stream true
+  not_if      'exit $(brew outdated| wc -l)'
 end
 
 cookbook_file '/etc/sudoers' do
