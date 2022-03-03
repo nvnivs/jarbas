@@ -17,7 +17,6 @@ jarbas_execute 'brew upgrade' do
   not_if      'exit $(brew outdated| wc -l)'
 end
 
-<<<<<<< HEAD
 ruby_block 'Enable admin password prompt' do
   block do
     sudoers = Chef::Util::FileEdit.new('/etc/sudoers')
@@ -26,11 +25,3 @@ ruby_block 'Enable admin password prompt' do
       sudoers.write_file
   end
 end
-=======
-cookbook_file '/etc/sudoers' do
-  source 'sudoers'
-  owner  'root'
-  group  'wheel'
-  mode   '0440'
-end
->>>>>>> origin/main
