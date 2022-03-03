@@ -17,9 +17,11 @@ jarbas_execute 'brew upgrade' do
   not_if      'exit $(brew outdated| wc -l)'
 end
 
-cookbook_file '/etc/sudoers' do
-  source 'sudoers'
-  owner 'root'
-  group 'wheel'
-  mode '0440'
+ruby_block 'Enable admin password prompt' do
+  block do
+    sudoers = Chef::Util::FileEdit.new('/etc/sudoers')
+    sudoers.search_file_replace_line(/^\%admin  ALL=\(ALL\) NOPASSWD: ALL$/,
+      '%admin  ALL=(ALL) ALL')
+      sudoers.write_file
+  end
 end
