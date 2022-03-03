@@ -9,7 +9,7 @@ ruby_block 'Disable admin password prompt' do
     sudoers = Chef::Util::FileEdit.new('/etc/sudoers')
     sudoers.search_file_replace_line(/^\%admin  ALL=\(ALL\) ALL$/,
       '%admin  ALL=(ALL) NOPASSWD: ALL')
-      sudoers.write_file
+    sudoers.write_file
   end
 end
 
