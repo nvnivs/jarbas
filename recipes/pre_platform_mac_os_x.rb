@@ -4,11 +4,13 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-cookbook_file '/etc/sudoers' do
-  source 'sudoers_nopass'
-  owner 'root'
-  group 'wheel'
-  mode '0440'
+ruby_block 'Disable admin password prompt' do
+  block do
+    sudoers = Chef::Util::FileEdit.new('/etc/sudoers')
+    sudoers.search_file_replace_line(/^\%admin  ALL=\(ALL\) ALL$/,
+      '%admin  ALL=(ALL) NOPASSWD: ALL')
+    sudoers.write_file
+  end
 end
 
 command_line_tools 'install command line tools'
