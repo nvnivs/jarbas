@@ -19,7 +19,7 @@ end
 
 cookbook_file '/etc/sudoers' do
   source 'sudoers'
-  owner 'root'
-  group 'wheel'
-  mode '0440'
+  owner  'root'
+  group  'wheel'
+  mode   '0440'
 end
