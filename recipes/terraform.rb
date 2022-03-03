@@ -49,7 +49,7 @@ homebrew_package 'terragrunt' do
 end
 
 # Plugins; Broken, install script no longer supported
-#jarbas_execute 'terraform_plugin[godaddy]' do
-#  command 'curl -s https://raw.githubusercontent.com/n3integration/terraform-godaddy/master/install.sh |bash -'
-#  not_if  { ::File.exist?("#{node['jarbas']['home']}/.terraform/plugins/terraform-godaddy") }
-#end
+# jarbas_execute 'terraform_plugin[godaddy]' do
+#   command 'curl -s https://raw.githubusercontent.com/n3integration/terraform-godaddy/master/install.sh |bash -'
+#   not_if  { ::File.exist?("#{node['jarbas']['home']}/.terraform/plugins/terraform-godaddy") }
+# end
