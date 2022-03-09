@@ -28,6 +28,12 @@ jarbas_execute 'reload_tfenv_group' do
   not_if  { platform?('mac_os_x') }
 end
 
+directory '/opt/tfenv/versions' do
+  owner 'root'
+  group 'root'
+  mode  '0777'
+end
+
 # Terragrunt
 case node['platform']
 when 'arch', 'manjaro'
