@@ -6,7 +6,7 @@
 
 case node['platform']
 when 'arch', 'manjaro'
-  jarbas_package 'aws-cli'
+  jarbas_yay_package 'aws-cli-v2-bin'
 when 'mac_os_x'
   include_recipe 'jarbas::python'
 
