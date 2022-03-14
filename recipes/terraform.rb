@@ -29,9 +29,10 @@ jarbas_execute 'reload_tfenv_group' do
 end
 
 directory '/opt/tfenv/versions' do
-  owner 'root'
-  group 'root'
-  mode  '0777'
+  owner  'root'
+  group  'root'
+  mode   '0777'
+  not_if { platform?('mac_os_x') }
 end
 
 # Terragrunt
