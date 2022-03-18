@@ -6,7 +6,7 @@
 
 case node['platform']
 when 'arch', 'manjaro'
-  jarbas_yay_package 'chef-dk'
+  jarbas_yay_package 'chef-workstation'
 when 'mac_os_x'
   homebrew_cask 'cinc-workstation' do
     action :remove
