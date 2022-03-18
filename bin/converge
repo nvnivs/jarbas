@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -e
+chef_bin='/opt/chef-workstation/bin/chef'
+client_bin='/opt/chef-workstation/bin/chef-client'
 
 function real_path {
     [[ ${1} = /* ]] && echo "${1}" || echo "${PWD}/${1#./}"
@@ -14,21 +16,21 @@ fi
 # Prepare
 sudo -v
 run_list=${1:-default}
-json=$(cat ~/.jarbas.json)
 work_dir=`mktemp -d -t "jarbas_XXXXX"`
+json=$(cat ~/.jarbas.json)
 
 # Generate policy
 pushd $(dirname $(dirname $(real_path $0))) >/dev/null
 if [ -f Policyfile.lock.json ]; then rm -rf Policyfile.lock.json; fi
-chef install --chef-license accept
+${chef_bin} install --chef-license accept
 
 # Export policy
-chef export $work_dir --chef-license accept --force
+${chef_bin} export ${work_dir} --force --chef-license accept
 
-# Run chef
-pushd $work_dir >/dev/null
-echo ${json} | sudo chef-client -z -n ${run_list} -j /dev/stdin --chef-license accept
+# Converge
+pushd ${work_dir} >/dev/null
+echo ${json} | sudo ${client_bin} -z -n ${run_list} -j /dev/stdin --chef-license accept
 
 # Tidy up
 popd >/dev/null
-sudo rm -rf $work_dir
+sudo rm -rf ${work_dir}
