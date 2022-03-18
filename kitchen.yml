@@ -1,7 +1,7 @@
 ---
 driver:
   name: dokken
-  chef_version: 15  # Version currently installed by chefdk on Manjaro
+  chef_version: 17  # Version currently installed by chefdk on Manjaro
   privileged: true  # allows systemd services to start
 
 provisioner:
