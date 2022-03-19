@@ -5,7 +5,7 @@ A rather opinionated cookbook to provision and configure workstations
 ## Pre-requisites
 
 * `git`: To checkout the repo
-* `chef-dk`: Need chef-client and chef
+* `chef-workstation`: Need chef-client and chef
 
 ## How to use
 

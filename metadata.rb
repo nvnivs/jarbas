@@ -5,7 +5,7 @@ license 'All Rights Reserved'
 description 'Installs/Configures workstation'
 version '5.5.1'
 
-chef_version '>= 15.14'
+chef_version '>= 17.2'
 issues_url 'https://github.com/z0c/jarbas/issues'
 source_url 'https://github.com/z0c/jarbas'
 

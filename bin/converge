@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set -e
-chef_bin='/opt/chef-workstation/bin/chef'
-client_bin='/opt/chef-workstation/bin/chef-client'
+chef_bin='chef'
+client_bin='chef-client'
 
 function real_path {
     [[ ${1} = /* ]] && echo "${1}" || echo "${PWD}/${1#./}"
