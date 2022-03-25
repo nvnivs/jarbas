@@ -21,5 +21,5 @@ named_run_list 'aws', 'jarbas::pre_platform', 'jarbas::aws', 'jarbas::post_platf
 named_run_list 'chef', 'jarbas::pre_platform', 'jarbas::chef', 'jarbas::post_platform'
 named_run_list 'docker', 'jarbas::pre_platform', 'jarbas::docker', 'jarbas::post_platform'
 named_run_list 'python', 'jarbas::pre_platform', 'jarbas::python', 'jarbas::post_platform'
-named_run_list 'terraform', 'jarbas::terraform'
+named_run_list 'terraform', 'jarbas::pre_platform', 'jarbas::terraform', 'jarbas::post_platform'
 named_run_list 'yay', 'jarbas::yay'
