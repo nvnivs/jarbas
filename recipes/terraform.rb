@@ -35,6 +35,13 @@ directory '/opt/tfenv/versions' do
   not_if { platform?('mac_os_x') }
 end
 
+directory '/usr/local/Cellar/tfenv/2.2.3/versions' do
+  owner  'root'
+  group  'wheel'
+  mode   '0777'
+  only_if { platform?('mac_os_x') }
+end
+
 # Terragrunt
 case node['platform']
 when 'arch', 'manjaro'
