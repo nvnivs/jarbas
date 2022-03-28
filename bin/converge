@@ -16,7 +16,11 @@ fi
 # Prepare
 sudo -v
 run_list=${1:-default}
-work_dir=`mktemp -d -t "jarbas_XXXXX"`
+if [ $(uname) = 'Darwin' ]; then
+    work_dir=`mktemp -d -t "jarbas"`
+else
+    work_dir=`mktemp -d -t "jarbas_XXXXX"`
+fi
 json=$(cat ~/.jarbas.json)
 
 # Generate policy
