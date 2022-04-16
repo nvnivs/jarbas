@@ -13,7 +13,8 @@ describe 'jarbas::default' do
     platform 'arch'
 
     it 'converges successfully' do
-      stub_command('$(pacman -Q linux |cut -d " " -f2) != $(uname -r |sed s/-MANJARO//g)').and_return(false)
+      stub_command('checkupdates').and_return(false)
+      stub_command('[[ $(yay -Qu |wc -l) == 0 ]]').and_return(false)
       expect { chef_run }.to_not raise_error
     end
   end
