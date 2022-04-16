@@ -3,7 +3,7 @@ maintainer 'n'
 maintainer_email 'nvnivs@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures workstation'
-version '5.5.2'
+version '5.5.3'
 
 chef_version '>= 17.2'
 issues_url 'https://github.com/z0c/jarbas/issues'
