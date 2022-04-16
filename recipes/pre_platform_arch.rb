@@ -11,7 +11,7 @@ execute 'Pacman update' do
 end
 
 execute 'Yay update' do
-  command           'yay -Syu --builddir=/tmp/ --noconfirm'
-  not_if            '[[ $(yay -Qu |wc -l) == 0 ]]'
-  live_stream       true
+  command     'yay -Syu --builddir=/tmp/ --noconfirm'
+  not_if      '[[ $(yay -Qu |wc -l) == 0 ]]'
+  live_stream true
 end
