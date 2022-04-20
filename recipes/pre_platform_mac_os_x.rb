@@ -13,6 +13,20 @@ ruby_block 'Disable admin password prompt' do
   end
 end
 
+automatic_software_updates "enables automatic check, download, and install of software updates" do
+  check             true
+  download          true
+  install_os        true
+  install_app_store true
+  install_critical  true
+end
+
+jarbas_execute 'brew upgrade' do
+  command     'brew upgrade'
+  live_stream true
+  not_if      'exit $(brew outdated| wc -l)'
+end
+
 command_line_tools 'install command line tools'
 include_recipe 'homebrew::default'
 
