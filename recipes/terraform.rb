@@ -45,7 +45,7 @@ end
 # Terragrunt
 case node['platform']
 when 'arch', 'manjaro'
-  jarbas_yay_package 'terragrunt'
+  jarbas_package 'terragrunt'
 when 'mac_os_x'
   homebrew_package 'terragrunt' do
     options '--ignore-dependencies'
