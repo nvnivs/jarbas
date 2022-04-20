@@ -21,13 +21,14 @@ automatic_software_updates "enables automatic check, download, and install of so
   install_critical  true
 end
 
+command_line_tools 'install command line tools'
+
 jarbas_execute 'brew upgrade' do
   command     'brew upgrade'
   live_stream true
-  not_if      'exit $(brew outdated| wc -l)'
+  only_if     '[ $(brew outdated| wc -l) -gt 0 ]', :user => node['jarbas']['user']
 end
 
-command_line_tools 'install command line tools'
 include_recipe 'homebrew::default'
 
 execute 'kill_dock' do
