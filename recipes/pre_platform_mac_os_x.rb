@@ -33,34 +33,38 @@ include_recipe 'homebrew::default'
 
 execute 'kill_dock' do
   command 'killall Dock'
-  action :nothing
+  action  :nothing
 end
 
 plist 'disable dashboard' do
-  path "#{node['jarbas']['home']}/Library/Preferences/com.apple.dashboard.plist"
-  entry 'mcx-disabled'
-  value true
-  only_if 'ps ax |grep [D]ash'
+  path     "#{node['jarbas']['home']}/Library/Preferences/com.apple.dashboard.plist"
+  entry    'mcx-disabled'
+  value    true
+  owner    node['jarbas']['user']
+  only_if  'ps ax |grep [D]ash'
   notifies :run, 'execute[kill_dock]', :delayed
 end
 
 plist 'General: Appearance' do
-  path "#{node['jarbas']['home']}/Library/Preferences/.GlobalPreferences.plist"
-  entry 'AppleInterfaceStyle'
-  value 'Dark'
+  path   "#{node['jarbas']['home']}/Library/Preferences/.GlobalPreferences.plist"
+  entry  'AppleInterfaceStyle'
+  value  'Dark'
+  owner  node['jarbas']['user']
   not_if "sudo -u #{node['jarbas']['user']} defaults read NSGlobalDomain |grep AppleInterfaceStyle |grep Dark"
 end
 
 plist 'General: Accent colour' do
-  path "#{node['jarbas']['home']}/Library/Preferences/.GlobalPreferences.plist"
-  entry 'AppleAquaColorVariant'
-  value 6
+  path   "#{node['jarbas']['home']}/Library/Preferences/.GlobalPreferences.plist"
+  entry  'AppleAquaColorVariant'
+  value  6
+  owner  node['jarbas']['user']
   not_if "sudo -u #{node['jarbas']['user']} defaults read NSGlobalDomain |grep AppleAquaColorVariant |grep 6"
 end
 
 plist 'show hidden files in finder' do
-  path "#{node['jarbas']['home']}/Library/Preferences/com.apple.finder.plist"
-  entry 'AppleShowAllFiles'
-  value true
+  path   "#{node['jarbas']['home']}/Library/Preferences/com.apple.finder.plist"
+  entry  'AppleShowAllFiles'
+  value  true
+  owner  node['jarbas']['user']
   not_if "sudo -u #{node['jarbas']['user']} defaults read com.apple.finder AppleShowAllFiles |grep 1"
 end
