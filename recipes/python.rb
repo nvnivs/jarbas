@@ -17,14 +17,7 @@ else
   raise 'Unsupported platform'
 end
 
-# code extensions
-code_extensions = ['ms-python.python']
-code_extensions.each do |e|
-  jarbas_execute "install_vscode_extension[#{e}]" do
-    command "code --install-extension #{e}"
-    not_if  "code --list-extensions |grep #{e}", user: node['jarbas']['user']
-  end
-end
+jarbas_vscode_extension 'ms-python.python'
 
 # pip packages
 pip_packages = %w(pytest tox)
