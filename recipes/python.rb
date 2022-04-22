@@ -24,11 +24,11 @@ pip_packages = %w(pytest tox)
 pip_packages.each do |p|
   jarbas_execute "pip_package[#{p}]" do
     command "pip3 install #{p}"
-    not_if  "pip3 list |grep #{p}", 
+    not_if  "pip3 list |grep #{p}",
       user: node['jarbas']['user'],
       environment: {
         'HOME' => node['jarbas']['home'],
-        'USER' => node['jarbas']['user']
+        'USER' => node['jarbas']['user'],
       }
   end
 end
