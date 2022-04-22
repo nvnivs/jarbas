@@ -9,7 +9,7 @@ when 'arch', 'manjaro'
   jarbas_yay_package 'visual-studio-code-bin'
 when 'mac_os_x'
   homebrew_cask 'visual-studio-code' do
-    owner   node['jarbas']['user']
+    owner node['jarbas']['user']
   end
 else
   raise 'Unsupported platform'
