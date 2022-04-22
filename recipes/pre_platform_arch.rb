@@ -12,6 +12,6 @@ end
 
 execute 'Yay update' do
   command     'yay -Syu --builddir=/tmp/ --noconfirm'
-  not_if      '[[ $(yay -Qu |wc -l) == 0 ]]'
+  not_if      'yay -Qu |wc -l', user: node['jarbas']['user']
   live_stream true
 end
