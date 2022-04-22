@@ -22,7 +22,7 @@ code_extensions = ['ms-python.python']
 code_extensions.each do |e|
   jarbas_execute "install_vscode_extension[#{e}]" do
     command "code --install-extension #{e}"
-    not_if "code --list-extensions |grep #{e}"
+    not_if  "code --list-extensions |grep #{e}", user: node['jarbas']['user']
   end
 end
 
@@ -31,6 +31,11 @@ pip_packages = %w(pytest tox)
 pip_packages.each do |p|
   jarbas_execute "pip_package[#{p}]" do
     command "pip3 install #{p}"
-    not_if "pip3 list |grep #{p}"
+    not_if  "pip3 list |grep #{p}", 
+      user: node['jarbas']['user'],
+      environment: {
+        'HOME' => node['jarbas']['home'],
+        'USER' => node['jarbas']['user']
+      }
   end
 end
