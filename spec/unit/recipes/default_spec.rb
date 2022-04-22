@@ -14,7 +14,7 @@ describe 'jarbas::default' do
 
     it 'converges successfully' do
       stub_command('checkupdates').and_return(false)
-      stub_command('[[ $(yay -Qu |wc -l) == 0 ]]').and_return(false)
+      stub_command('yay -Qu |wc -l').and_return(0)
       expect { chef_run }.to_not raise_error
     end
   end
