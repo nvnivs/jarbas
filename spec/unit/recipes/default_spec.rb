@@ -13,7 +13,7 @@ describe 'jarbas::default' do
     platform 'arch'
 
     it 'converges successfully' do
-      # Arch guards      
+      # Arch guards
       stub_command('checkupdates').and_return(false)
       stub_command('yay -Qu |wc -l').and_return(0)
 
