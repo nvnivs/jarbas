@@ -20,7 +20,7 @@ end
 jarbas_vscode_extension 'ms-python.python'
 
 # pip packages
-pip_packages = %w(pytest tox)
+pip_packages = %w(pytest tox pre-commit)
 pip_packages.each do |p|
   jarbas_execute "pip_package[#{p}]" do
     command "pip3 install #{p}"
