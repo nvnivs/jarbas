@@ -53,3 +53,7 @@ when 'mac_os_x'
 else
   raise 'Unsupported platform'
 end
+
+# Quality tools
+jarbas_package 'tflint'
+jarbas_package 'tfsec'
