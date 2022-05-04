@@ -13,8 +13,15 @@ describe 'jarbas::default' do
     platform 'arch'
 
     it 'converges successfully' do
+      # Arch guards      
       stub_command('checkupdates').and_return(false)
       stub_command('yay -Qu |wc -l').and_return(0)
+
+      # Python guards
+      stub_command('pip3 list |grep pytest').and_return(true)
+      stub_command('pip3 list |grep tox').and_return(true)
+      stub_command('pip3 list |grep pre-commit').and_return(true)
+
       expect { chef_run }.to_not raise_error
     end
   end
