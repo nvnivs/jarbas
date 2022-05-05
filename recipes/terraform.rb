@@ -54,6 +54,22 @@ else
   raise 'Unsupported platform'
 end
 
-# Quality tools
-jarbas_package 'tflint'
-jarbas_package 'tfsec'
+# Tflint
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_yay_package 'tflint-bin'
+when 'mac_os_x'
+  homebrew_package 'tflint'
+else
+  raise 'Unsupported platform'
+end
+
+# tfsec
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_yay_package 'tfsec-bin'
+when 'mac_os_x'
+  homebrew_package 'tfsec'
+else
+  raise 'Unsupported platform'
+end
