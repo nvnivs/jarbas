@@ -17,3 +17,11 @@ when 'mac_os_x'
 else
   raise 'Unsupported platform'
 end
+
+# Session Manager plugin
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_yay_package 'aws-session-manager-plugin'
+else
+  raise 'Unsupported platform'
+end
