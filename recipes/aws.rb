@@ -22,6 +22,8 @@ end
 case node['platform']
 when 'arch', 'manjaro'
   jarbas_yay_package 'aws-session-manager-plugin'
+when 'mac_os_x'
+  jarbas_package 'aws-session-manager-plugin'
 else
   raise 'Unsupported platform'
 end
