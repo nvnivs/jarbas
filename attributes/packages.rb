@@ -17,6 +17,7 @@ default['jarbas']['packages']['install'] = [
 default['jarbas']['packages']['arch'] = [
   'iotop',            # View I/O usage of processes
   'ntp',              # Software clock syncronizer
+  'poedit',           # Cross-platform gettext catalogs (.po files) editor
   'pulseaudio',       # Proxy for sound hardware
   'qt5-webkit',
   'qt5-x11extras',
