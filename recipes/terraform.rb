@@ -94,3 +94,7 @@ when 'mac_os_x'
 else
   raise 'Unsupported platform'
 end
+
+# sops
+jarbas_package 'sops'
+jarbas_vscode_extension 'signageos.signageos-vscode-sops'
