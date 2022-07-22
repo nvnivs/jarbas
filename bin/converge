@@ -14,6 +14,7 @@ if [ ! -f ~/.jarbas.json ]; then
 fi
 
 # Prepare
+sudo whoami >/dev/null
 run_list=${1:-default}
 if [ $(uname) = 'Darwin' ]; then
     work_dir=`mktemp -d -t "jarbas"`
