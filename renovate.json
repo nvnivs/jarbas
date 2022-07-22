@@ -4,7 +4,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^metadata/.rb$"],
+      "fileMatch": ["^metadata.rb$"],
       "matchStrings": [
          "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*depends\\s*'[a-zA-Z-_]+'\\s*,\\s*'(?<currentValue>.*)'\\s"
       ],
