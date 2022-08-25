@@ -3,6 +3,7 @@ default['jarbas']['packages']['install'] = [
   'autossh',         # Automatically restart SSH sessions and tunnels
   'htop',            # Improved top (interactive process viewer)
   'iftop',           # Display bandwidth usage on an interface
+  'jq',
   'mtr',
   'openssh',
   'openssl',
