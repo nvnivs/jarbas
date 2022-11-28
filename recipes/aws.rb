@@ -27,3 +27,13 @@ when 'mac_os_x'
 else
   raise 'Unsupported platform'
 end
+
+# Saml2AWS
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_yay_package 'saml2aws'
+when 'mac_os_x'
+  homebrew_cask 'saml2aws'
+else
+  raise 'Unsupported platform'
+end
