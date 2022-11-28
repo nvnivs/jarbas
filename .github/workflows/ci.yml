@@ -18,7 +18,7 @@ jobs:
       - name: Set up Ruby 2.6
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: '2.7'
           
       - name: Setup cookstyle
         run: gem install cookstyle
@@ -35,7 +35,7 @@ jobs:
       - name: Set up Ruby 2.6
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: '2.7'
           
       - name: Setup flay
         run: gem install flay
