@@ -20,7 +20,6 @@ default['jarbas']['packages']['arch'] = [
   'ntp',              # Software clock syncronizer
   'poedit',           # Cross-platform gettext catalogs (.po files) editor
   'pulseaudio',       # Proxy for sound hardware
-  'qt5-webkit',
   'qt5-x11extras',
   'qt5-quickcontrols',
 ]
