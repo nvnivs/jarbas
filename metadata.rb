@@ -14,7 +14,7 @@ depends 'homebrew', '5.3.1'
 # renovate: datasource=github-releases depName=microsoft/macos-cookbook
 depends 'macos', '5.0.1'
 # renovate: datasource=github-releases depName=sous-chefs/vagrant
-depends 'vagrant', '3.0.1'
+depends 'vagrant', '3.0.2'
 
 supports 'arch'
 supports 'mac_os_x'
