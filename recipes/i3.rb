@@ -10,7 +10,7 @@ home = node['jarbas']['home']
 user = node['jarbas']['user']
 
 # i3 window manager
-jarbas_package 'i3-gaps'
+jarbas_package 'i3-wm'
 
 directory "#{home}/.i3" do
   owner user
