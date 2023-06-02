@@ -10,7 +10,7 @@ issues_url 'https://github.com/z0c/jarbas/issues'
 source_url 'https://github.com/z0c/jarbas'
 
 # renovate: datasource=github-releases depName=sous-chefs/homebrew
-depends 'homebrew', '5.4.0'
+depends 'homebrew', '5.4.1'
 # renovate: datasource=github-releases depName=microsoft/macos-cookbook
 depends 'macos', '5.0.1'
 # renovate: datasource=github-releases depName=sous-chefs/vagrant
