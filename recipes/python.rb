@@ -12,7 +12,7 @@ pip_packages.each do |p|
   case node['platform']
   when 'arch', 'manjaro'
     jarbas_package "python-#{p}"
-  when 'mac_os_x'  
+  when 'mac_os_x'
     jarbas_execute "pip_package[#{p}]" do
       command "pip3 install #{p}"
       not_if  "pip3 list |grep #{p}",
