@@ -6,7 +6,7 @@
 
 jarbas_package 'python'
 
-# Pip
+# pip
 case node['platform']
 when 'arch', 'manjaro'
   jarbas_package 'python-pip'
@@ -17,10 +17,18 @@ else
   raise 'Unsupported platform'
 end
 
+# pytest
+case node['platform']
+when 'arch', 'manjaro'
+  jarbas_package 'python-pytest'
+else
+  raise 'Unsupported platform'
+end
+
 jarbas_vscode_extension 'ms-python.python'
 
 # pip packages
-pip_packages = %w(pytest tox pre-commit)
+pip_packages = %w(tox pre-commit)
 pip_packages.each do |p|
   jarbas_execute "pip_package[#{p}]" do
     command "pip3 install #{p}"
