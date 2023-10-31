@@ -422,3 +422,7 @@ mode "$mode_gaps_outer" {
 default_border pixel 1
 default_floating_border pixel 1
 for_window [class="^.*"] border pixel 1
+
+# Screenshots
+bindsym $mod+p exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+$mod+p exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png

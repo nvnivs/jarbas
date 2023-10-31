@@ -21,6 +21,7 @@ named_run_list 'aws', 'jarbas::pre_platform', 'jarbas::aws', 'jarbas::post_platf
 named_run_list 'chef', 'jarbas::pre_platform', 'jarbas::chef', 'jarbas::post_platform'
 named_run_list 'docker', 'jarbas::pre_platform', 'jarbas::docker', 'jarbas::post_platform'
 named_run_list 'gcloud', 'jarbas::pre_platform', 'jarbas::gcloud', 'jarbas::post_platform'
+named_run_list 'i3', 'jarbas::i3'
 named_run_list 'platform', 'jarbas::pre_platform', 'jarbas::post_platform'
 named_run_list 'python', 'jarbas::pre_platform', 'jarbas::python', 'jarbas::post_platform'
 named_run_list 'rdp', 'jarbas::pre_platform', 'jarbas::rdp', 'jarbas::post_platform'
