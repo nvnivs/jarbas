@@ -18,10 +18,12 @@ default['jarbas']['packages']['install'] = [
 default['jarbas']['packages']['arch'] = [
   'iotop',            # View I/O usage of processes
   'ntp',              # Software clock syncronizer
+  'maim',             # maim (Make Image) is an utility that takes screenshots of your desktop
   'poedit',           # Cross-platform gettext catalogs (.po files) editor
   'pulseaudio',       # Proxy for sound hardware
   'qt5-x11extras',
   'qt5-quickcontrols',
+  'xclip',
 ]
 
 # List of arch only AUR packages
@@ -30,8 +32,8 @@ default['jarbas']['packages']['aur'] = [
 
 # Homebrew packages for mac_ox_x
 default['jarbas']['packages']['homebrew'] = [
-  'coreutils', # GNU File, Shell, and Text utilities
-  'jq', # Lightweight and flexible command-line JSON processor
+  'coreutils',       # GNU File, Shell, and Text utilities
+  'jq',              # Lightweight and flexible command-line JSON processor
   'telnet',          # User interface to the TELNET protocol (built from macOS Sierra sources)
   'tcptraceroute',   # Traceroute implementation using TCP packets
   'watch',           # Executes a program periodically, showing output fullscreen
