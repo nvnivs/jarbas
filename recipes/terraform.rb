@@ -74,17 +74,6 @@ else
   raise 'Unsupported platform'
 end
 
-# checkov
-jarbas_execute 'pip_package[checkov]' do
-  command 'pip3 install checkov'
-  not_if  'pip3 list |grep checkov',
-    user: node['jarbas']['user'],
-    environment: {
-      'HOME' => node['jarbas']['home'],
-      'USER' => node['jarbas']['user'],
-    }
-end
-
 # terrascan
 case node['platform']
 when 'arch', 'manjaro'
