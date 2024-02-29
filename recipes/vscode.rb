@@ -7,6 +7,11 @@
 case node['platform']
 when 'arch', 'manjaro'
   jarbas_yay_package 'visual-studio-code-bin'
+when 'ubuntu'
+  snap_package 'code' do
+    options 'classic'
+    action  :upgrade
+  end
 when 'mac_os_x'
   homebrew_cask 'visual-studio-code' do
     owner node['jarbas']['user']

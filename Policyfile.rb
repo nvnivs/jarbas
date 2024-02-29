@@ -27,4 +27,6 @@ named_run_list 'python', 'jarbas::pre_platform', 'jarbas::python', 'jarbas::post
 named_run_list 'rdp', 'jarbas::pre_platform', 'jarbas::rdp', 'jarbas::post_platform'
 named_run_list 'terraform', 'jarbas::pre_platform', 'jarbas::terraform', 'jarbas::post_platform'
 named_run_list 'test', 'jarbas::test'
+named_run_list 'vscode', 'jarbas::vscode'
 named_run_list 'yay', 'jarbas::yay'
+named_run_list 'zsh', 'jarbas::zsh'
