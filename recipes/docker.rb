@@ -5,12 +5,15 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 # Docker
+services = ['docker.service', 'containerd.service']
+
 if platform?('mac_os_x')
   homebrew_cask 'docker'
   services = ['docker']
+elsif platform?('ubuntu')
+  docker_installation 'default'
 else
   jarbas_package 'docker'
-  services = ['docker.service', 'containerd.service']
 end
 
 # Manage docker as user
@@ -33,49 +36,45 @@ services.each do |s|
 end
 
 # Helm
-jarbas_package 'helm'
+jarbas_package 'helm' do
+  not_if { platform?('ubuntu') }
+end
+
+snap_package 'helm' do
+  options 'classic'
+  action  :upgrade
+  only_if { platform?('ubuntu') }
+end
 
 # Kubectl
 if platform?('mac_os_x')
   package 'kubernetes-cli'
 else
-  jarbas_yay_package 'kubectl-bin'
+  jarbas_yay_package 'kubectl-bin' do
+    not_if { platform?('ubuntu') }
+  end  
+end
+
+snap_package 'kubectl' do
+  options 'classic'
+  action  :upgrade
+  only_if { platform?('ubuntu') }
 end
 
 # Stern: Multi pod and container log tailing for Kubernetes
 if platform?('mac_os_x')
   package 'stern'
 else
-  jarbas_yay_package 'stern-bin'
+  jarbas_yay_package 'stern-bin' do
+    not_if { platform?('ubuntu') }
+  end
 end
 
 # AWS IAM Authenticator: A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster
 if platform?('mac_os_x')
   package 'aws-iam-authenticator'
 else
-  jarbas_yay_package 'aws-iam-authenticator-bin'
+  jarbas_yay_package 'aws-iam-authenticator-bin' do
+    not_if { platform?('ubuntu') }
+  end
 end
-
-# Minikube
-jarbas_package 'minikube'
-
-# TODO: this stuff is too much for the crap laptop
-# jarbas_execute 'minikube[cpus]' do
-#  command 'minikube config set cpus 4'
-#  not_if 'minikube config get cpus |grep "^4$"'
-# end
-
-# jarbas_execute 'minikube[dashboard]' do
-#  command 'minikube config set dashboard true'
-#  not_if 'minikube config get dashboard |grep "^true$"'
-# end
-
-# jarbas_execute 'minikube[kubernetes-version]' do
-#  command 'minikube config set kubernetes-version 1.15.0'
-#  not_if 'minikube config get kubernetes-version |grep "^1\.15\.0$"'
-# end
-
-# jarbas_execute 'minikube[memory]' do
-#  command 'minikube config set memory 6048'
-#  not_if 'minikube config get memory |grep "^6048$"'
-# end
